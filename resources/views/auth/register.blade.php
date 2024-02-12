@@ -6,11 +6,11 @@
     <div class="row justify-content-center">
         <div class="rounded shadow col-md-8">
             <div class="row" style="z-index: -1;">
-                <div class="col-5 m-0">
-                    <img src="{{asset('storage/images/authside.png')}}" style="max-height:400px; object-fit:fill; border-radius:0px;" alt="">
+                <div class="col-md-5 m-0 hidden-mobile">
+                    <img src="{{asset('storage/images/authside.png')}}" style="width:120%; object-fit:fill; border-radius:0px;" alt="">
                 </div>
-                <div class="col-7 m-0" style="background-image: linear-gradient(to right,#411900,#4b5320)">
-                    <h2 class="mb-3 mt-3 text-light text-center">Create an Account</h2>
+                <div class="col-md-7 m-0" style="background-image: linear-gradient(to right,#411900,#4b5320)">
+                    <h2 class="mb-3 mt-3 text-light text-center">Sign Up</h2>
                     <form method="POST" action="{{ route('register') }}">
                         @csrf
                         <div class="mb-3">
@@ -47,12 +47,12 @@
                         </div>
 
                         <div class="d-flex justify-content-center mb-3">
-                            <button type="submit" class="btn btn-primary">
-                                {{ __('Register') }}
+                            <button type="submit" class="btn btn-outline-dark text-white rounded-pill shadow ps-5 pe-5 pt-2 pb-2">
+                                {{ __('Sign Up') }}
                             </button>
                         </div>
                     </form>
-                    <p class="text-white text-center mt-3">Don't have an account? <a href="{{ route('login') }}" class="text-info">Sign in.</a></p>
+                    <p class="text-white text-center mt-3">Alread have an account? <a href="{{ route('login') }}" class="red-link">Sign in.</a></p>
                 </div>
             </div>
         </div>

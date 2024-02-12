@@ -12,26 +12,73 @@
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.bunny.net">
-    <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
+    <link href="https://fonts.bunny.net/css?family=Montserrat" rel="stylesheet">
 
     <!-- Scripts -->
     <!-- @vite(['resources/sass/app.scss', 'resources/js/app.js']) -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <style>
-        body {
-            background-image: linear-gradient(to right,#411900, #4b5320);
+        html {
+            background-image: url("{{asset('/storage/images/home.png')}}");
         }
+
+        body {
+            z-index: -1;
+            background-image: linear-gradient(to right, #411900, #4b5320);
+            max-height: 1vh;
+        }
+
         .nav-link {
             font-size: 21px;
+            margin-left: 30px;
+            margin-right: 0px;
+            font-weight: bolder;
+            font-family: 'Monteserrat';
+        }
+
+        h1 {
+            font-size: 6vw;
+            color: white;
+        }
+
+        h2 {
+            font-size: 4vw;
+            color: white;
+        }
+
+        h3 {
+            font-size: 2vw;
+            color: aliceblue;
+            
+        }
+
+        .btn {
+            background-image: linear-gradient(to right, #4b5316, #411901)
+        }
+
+        .red-link {
+            color: black;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .red-link :hover {
+            color: white;
+        }
+
+        @media (max-width: 800px) {
+            .hidden-mobile {
+                display: none;
+            }
         }
     </style>
 </head>
 
 <body>
     @if((request()->path() == 'login')||(request()->path() == 'register'))
-    <div class="col-7" style="position:absolute;z-index:-1; background-color:white; min-height:650px; border-radius:0px 50% 50% 0px; margin:0px;"></div>
+    <div class="col-7 hidden-mobile" style="position:absolute;z-index:-3; background-color:white; height:100%; border-radius:0px 50% 50% 0px; margin:0px; object-fit:contain;"></div>
     @else
-    <img src="{{asset('storage/images/home.png')}}" style="position:absolute;z-index:-1;">
+    <img src="{{asset('/storage/images/home.png')}}" style="position:absolute;z-index:-3;height:100%;object-fit:cover;" alt="">
     @endif
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-transparent text-light ">
@@ -50,7 +97,7 @@
                     </ul>
 
                     <!-- Right Side Of Navbar -->
-                    <ul class="navbar-nav ms-auto me-0">
+                    <ul class="navbar-nav">
                         <li class="nav-item">
                             <a class="nav-link text-light" href="/">
                                 Home

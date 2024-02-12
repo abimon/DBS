@@ -2,14 +2,14 @@
 
 @section('content')
 <div class="container">
-    <div class="row justify-content-center" >
-        <div class="rounded shadow col-md-8" >
+    <div class="row justify-content-center">
+        <div class="rounded shadow col-md-8">
             <div class="row" style="z-index: 2;">
-                <div class="col-5 m-0">
+                <div class="col-5 m-0 hidden-mobile">
                     <img src="{{asset('storage/images/authside.png')}}" style="max-height:400px; object-fit:fill; border-radius:0px;" alt="">
                 </div>
-                <div class="col-7 m-0" style="background-image: linear-gradient(to right,#411900,#4b5320)">
-                    <h2 class="mb-3 mt-3 text-light text-center">Sign in</h2>
+                <div class="col-md-7 m-0" style="background-image: linear-gradient(to right,#411900,#4b5320)">
+                    <h3 class="mb-3 mt-3 text-light">Sign in</h3>
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
                         <div class="mb-3">
@@ -28,14 +28,14 @@
                             </span>
                             @enderror
                         </div>
-                        <div class="d-flex justify-content-center mb-3">
-                                <div class="text-white">
-                                    <input class="form-check-input" type="checkbox" name="remember" id="remember"> 
-                                        {{ __('Remember Me') }}
-                                </div>
+                        <div class="d-flex justify-content-between mb-3 ms-2 me-2">
+                            <div class="text-white">
+                                <input class="form-check-input" type="checkbox" name="remember" id="remember">
+                                {{ __('Remember Me?') }}
+                            </div>
                             <div>
                                 @if (Route::has('password.request'))
-                                <a class="btn btn-link" href="{{ route('password.request') }}">
+                                <a class="btn-link text-white" href="{{ route('password.request') }}">
                                     {{ __('Forgot Your Password?') }}
                                 </a>
                                 @endif
@@ -43,12 +43,12 @@
                         </div>
 
                         <div class="d-flex justify-content-center">
-                            <button type="submit" class="w-75  btn btn-outline-primary rounded-pill form-control">
+                            <button type="submit" class="btn btn-outline-dark text-white rounded-pill shadow ps-5 pe-5 pt-2 pb-2">
                                 {{ __('Login') }}
                             </button>
                         </div>
                     </form>
-                    <p class="text-white text-center mt-3">Don't have an account? <a href="{{ route('register') }}" class="text-info">Sign up now</a></p>
+                    <p class="text-white text-center mt-3">Don't have an account? <a href="{{ route('register') }}" class="red-link">Sign up now</a></p>
                 </div>
             </div>
         </div>
