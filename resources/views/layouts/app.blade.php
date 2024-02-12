@@ -17,16 +17,12 @@
     <!-- Scripts -->
     <!-- @vite(['resources/sass/app.scss', 'resources/js/app.js']) -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link href='https://fonts.googleapis.com/css' rel='stylesheet'>
     <style>
         body {
-            background-image: linear-gradient(to-right, #411900, #4b5320);
+            background-image: linear-gradient(to right,#411900, #4b5320);
         }
-
         .nav-link {
-            font-family: 'Montserrat black';
             font-size: 21px;
-            /* font-weight: bold; */
         }
     </style>
 </head>
@@ -38,10 +34,7 @@
     <img src="{{asset('storage/images/home.png')}}" style="position:absolute;z-index:-1;">
     @endif
     <div id="app">
-        @if((request()->path() == 'login')||(request()->path() == 'register'))
-        <div style="min-height: 70px;"></div>
-        @else
-        <nav class="navbar navbar-expand-md navbar-light bg-transparent text-light fixed-top">
+        <nav class="navbar navbar-expand-md navbar-light bg-transparent text-light ">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
                     <img src="{{asset('storage/images/logo.png')}}" style="width: 60%;" alt="">
@@ -76,7 +69,6 @@
                 </div>
             </div>
         </nav>
-        @endif
 
         <main class="py-4 pt-5 bg-transparent">
             @yield('content')
