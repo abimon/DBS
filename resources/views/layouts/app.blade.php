@@ -7,9 +7,11 @@
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
-
-    <title>The Heart-Ed | {{request()->path()}}</title>
-
+    @if(request()->path()=='/')
+    <title>The Heart-Ed | Home</title>
+    @else
+    <title style="text-transform: uppercase;">The Heart-Ed | {{request()->path()}}</title>
+    @endif
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=Montserrat" rel="stylesheet">
@@ -19,7 +21,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <style>
         html {
-            background-image: url("{{asset('/storage/images/home.png')}}");
+            background-image: linear-gradient(to right, #411900, #4b5320);
         }
 
         body {
@@ -42,7 +44,7 @@
         }
 
         h2 {
-            font-size: 4vw;
+            font-size: 3vw;
             color: white;
         }
 
@@ -71,14 +73,17 @@
                 display: none;
             }
         }
+        .auth{
+            background-image: url("{{asset('storage/images/authside.png')}}");
+        }
     </style>
 </head>
 
 <body>
     @if((request()->path() == 'login')||(request()->path() == 'register'))
-    <div class="col-7 hidden-mobile" style="position:absolute;z-index:-3; background-color:white; height:100%; border-radius:0px 50% 50% 0px; margin:0px; object-fit:contain;"></div>
+    <div class="col-8 hidden-mobile" style="position:absolute;z-index:-3; background-color:white; height:100%; border-radius:0px 30% 30% 0px; margin:0px; object-fit:contain;"></div>
     @else
-    <img src="{{asset('/storage/images/home.png')}}" style="position:absolute;z-index:-3;height:100%;object-fit:cover;" alt="">
+    <img src="{{asset('/storage/images/home.png')}}" style="position:absolute;z-index:-3;width:100%;height:100%;object-fit:cover;" alt="">
     @endif
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-transparent text-light ">

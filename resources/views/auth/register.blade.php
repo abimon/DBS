@@ -4,13 +4,12 @@
 
 <div class="container">
     <div class="row justify-content-center">
-        <div class="rounded shadow col-md-8">
-            <div class="row" style="z-index: -1;">
-                <div class="col-md-5 m-0 hidden-mobile">
-                    <img src="{{asset('storage/images/authside.png')}}" style="width:120%; object-fit:fill; border-radius:0px;" alt="">
+        <div class="col-md-8">
+            <div class="row shadow rounded" style="z-index: -1;">
+                <div class="col-md-5 m-0 hidden-mobile auth">
                 </div>
                 <div class="col-md-7 m-0" style="background-image: linear-gradient(to right,#411900,#4b5320)">
-                    <h2 class="mb-3 mt-3 text-light text-center">Sign Up</h2>
+                    <h2 class="mb-3 mt-3 text-light text-center">Create an account</h2>
                     <form method="POST" action="{{ route('register') }}">
                         @csrf
                         <div class="mb-3">
@@ -34,6 +33,7 @@
 
                         <div class="mb-3">
                             <input id="password" type="password" class="form-control @error('password') is-invalid @enderror rounded-pill" placeholder="Create Password" name="password" required autocomplete="new-password">
+                            <small class="text-white ms-3">Must be atleast 8 characters</small>
 
                             @error('password')
                             <span class="invalid-feedback" role="alert">

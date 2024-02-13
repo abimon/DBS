@@ -3,7 +3,7 @@
 <div class="bg-transparent">
     <div class="text-center">
         <h1>THE</h1>
-        <h1>HEARTH-ED</h1>
+        <h1>HEART-ED</h1>
         <div class="d-flex justify-content-center mt-3 mb-5">
             <h2 style="width: 40%;">The truth that changes hearts</h2>
         </div>
