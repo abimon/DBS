@@ -72,6 +72,9 @@
             .hidden-mobile {
                 display: none;
             }
+            h2{
+                font-size: 5vw;
+            }
         }
         .auth{
             background-image: url("{{asset('storage/images/authside.png')}}");
