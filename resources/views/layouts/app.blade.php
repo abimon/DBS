@@ -21,12 +21,12 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <style>
         html {
-            background-image: linear-gradient(to right, #411900, #4b5320);
+            background-image: linear-gradient(to right,  #89E480, #634211);
         }
 
         body {
             z-index: -1;
-            background-image: linear-gradient(to right, #411900, #4b5320);
+            background-image: linear-gradient(to right, #89E480, #634211);
             max-height: 1vh;
         }
 
@@ -41,6 +41,7 @@
         h1 {
             font-size: 6vw;
             color: white;
+            font-weight: bold;
         }
 
         h2 {
@@ -55,7 +56,7 @@
         }
 
         .btn {
-            background-image: linear-gradient(to right, #4b5316, #411901)
+            background-image: linear-gradient(to right, #634211,  #89E480)
         }
 
         .red-link {
@@ -72,12 +73,22 @@
             .hidden-mobile {
                 display: none;
             }
+            h1{
+                font-size: 8vw;
+                font-weight: bold;
+            }
             h2{
                 font-size: 5vw;
+            }
+            .form{
+                margin:10% auto;
             }
         }
         .auth{
             background-image: url("{{asset('storage/images/authside.png')}}");
+        }
+        .form{
+            background-image: linear-gradient(to right, #634211, #89E480);
         }
     </style>
 </head>

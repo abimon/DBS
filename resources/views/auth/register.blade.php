@@ -8,7 +8,7 @@
             <div class="row shadow rounded" style="z-index: -1;">
                 <div class="col-md-5 m-0 hidden-mobile auth">
                 </div>
-                <div class="col-md-7 m-0" style="background-image: linear-gradient(to right,#411900,#4b5320)">
+                <div class="col-md-7 m-0 form">
                     <h2 class="mb-3 mt-3 text-light text-center">Create an account</h2>
                     <form method="POST" action="{{ route('register') }}">
                         @csrf

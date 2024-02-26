@@ -8,7 +8,7 @@
                 <div class="col-5 m-0 hidden-mobile">
                     <img src="{{asset('storage/images/authside.png')}}" style="max-height:400px; object-fit:fill; border-radius:0px;" alt="">
                 </div>
-                <div class="col-md-7 m-0" style="background-image: linear-gradient(to right,#411900,#4b5320)">
+                <div class="col-md-7 m-sm-0 form">
                     <h2 class="mb-3 mt-3 text-light">Sign in</h2>
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
