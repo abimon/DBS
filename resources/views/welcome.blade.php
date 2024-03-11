@@ -48,9 +48,9 @@
         <div class="row mt-5">
             <div class="col-lg-6">
                 <h2>Get personalized guidance</h2>
-                <div class="program"><i class="bi bi-question-circle-filled"></i> Weekly Q & A sessions</div>
+                <div class="program"><i class="bi bi-question-circle-fill"></i> Weekly Q & A sessions</div>
                 <div class="program"><i class="bi bi-camera-video"></i> Live monthly training</div>
-                <div class="program"><i class="bi bi-chat-left-dotted"></i> Active forums</div>
+                <div class="program"><i class="bi bi-chat-left-dots"></i> Active forums</div>
             </div>
             <div class="col-lg-5">
                 <img src="{{asset('storage/images/get.png')}}" style="width: 100%;">
