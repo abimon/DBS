@@ -1,0 +1,219 @@
+.prim {
+    color: #141430;
+}
+
+.bg-prim {
+    background-color: #141430;
+}
+main{
+    min-height: 78vh;
+}
+/*********************************
+ * HOME *
+*********************************/
+.school{
+    padding-top: 5vh;
+    padding-bottom: 5vh;
+}
+.school h1 {
+    color: white;
+    font-size: 3.8vw;
+    text-align: left;
+    text-transform: uppercase;
+}
+
+
+.school p {
+    color: white;
+    font-size: 2vw;
+    text-align: left;
+}
+
+.button {
+    border-radius: 12px;
+    padding: 4px 14px 4px 14px;
+    font-size: small;
+    color: white;
+    background-color: #141430;
+    font-family: Montserrat;
+}
+
+.about {
+    width: 40vw;
+    position: absolute;
+    left: 30%;
+    top: 40%;
+    z-index: 1;
+    border-radius: 12px;
+    text-align: center;
+    padding: 2rem;
+    background-color: #141430;
+}
+
+.about h2 {
+    color: white;
+    font-weight: bold;
+    font-size: 2vw;
+}
+
+.about p {
+    color: white;
+    font-family: Montserrat;
+    font-size: 1.2vw;
+}
+
+.programs {
+    margin-top: 22vh;
+    color: #141430;
+    text-align: center;
+}
+
+.programs p {
+    font-weight: bold;
+    font-family: Montserrat;
+}
+
+.programs i {
+    font-size: 4em;
+}
+#about_program{
+    margin: 5%;
+    border-radius: 12px;
+    color: #141430;
+    background-color: rgb(212, 247, 236);
+    padding: 2vw;
+    
+}
+#about_program .row{
+    margin-left:10%;
+    width:80%;
+}
+#about_program h1{
+    font-family: Brandon Grotesque;
+    font-weight: bolder;
+    text-align: center;
+}
+#about_program h2{
+    font-family: Montserrat;
+    font-weight:bold;
+}
+#about_program .program{
+    font-family: Montserrat;
+    color:black;
+    margin-top: 2vh;
+    font-weight: bold;
+}
+#message{
+    margin-right: 5%;
+    margin-left: 5%;
+    padding: 2vw;
+}
+#message h1{
+    font-weight: bolder;
+    color: #141430;
+    font-family: Brandon Grotesque;
+}
+#message a{
+    font-family: Montserrat;
+    color: #141430;
+    font-weight:bold;
+    text-decoration: none;
+}
+#message button{
+    border-radius: 20px;
+    font-size: 4vh;
+    font-weight: bold;
+    font-family: Montserrat;
+    background-color: #141430;
+    color:white;
+}
+#help{
+    padding: 15vh 0 15vh 0;
+    margin-top: 10vh;
+    background-position: center;
+}
+#help .title{
+    text-align: center;
+    font-weight: bold;
+    font-size: 6vw;
+    color: white;
+    font-family: Brandon Grotesque;
+}
+#help button{
+    border-radius: 20px;
+    font-size: 2vw;
+    font-weight: bold;
+    font-family: Montserrat;
+}
+#connect{
+    margin:3vw;
+    font-family: Montserrat;
+    color:#141430;
+}
+#connect .title{
+    font-weight: bolder;
+    font-style: italic;
+    font-family: Brandon Grotesque;
+    font-size:3vw;
+}
+#connect input{
+    border: none;
+}
+#connect p {
+    font-weight: bold;
+    font-size: 1.5vw;
+}
+#connect input:focus{
+    border:none;
+    border-bottom: 2px solid #141430;
+}
+#connect input::placeholder{
+    font-weight: bold;
+    color:#141430;
+    font-family: Montserrat;
+}
+.bottom{
+    margin:0;
+    /* background-color: rgb(212, 247, 236); */
+}
+.bottom .mail{
+    font-weight: bold;
+    font-size:1.5vw;
+}
+.form{
+    background-color: #141430;
+    padding:2vw;
+    border-radius: 12px;
+    font-family: Brandon Grotesque;
+    font-weight: bold;
+}
+footer {
+    background-color: #141430;
+    color: white;
+    font-family: Montserrat;
+    padding-top: 3vh;
+    padding-bottom: 3vh;
+}
+
+@media (max-width:760px) {
+    .school h1 {
+        font-size: 4.8vw;
+    }
+    .school p {
+        font-size: 3vw;
+    }
+
+    .about {
+        top: 30%;
+        width: 60vw;
+        right: 10%;
+    }
+
+    .about h2 {
+        font-size: 3vw;
+    }
+
+    .about p {
+        font-size: 2.2vw;
+    }
+}
