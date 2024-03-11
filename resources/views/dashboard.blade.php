@@ -16,7 +16,7 @@
         @foreach($courses as $course)
         <div class="col-md-4 p-2">
             <div class="card">
-                <img src="{{asset('storage/images/'.$course['image'])}}" alt="Cover Image" style="height:30vh">
+                <img src="{{asset('storage/images/'.$course['image'])}}" alt="Cover Image" style="height:30vh;object-fit:scale-down;">
                 <div class="card-body">
                     <h5 class="card-title">{{$course['course']}}</h5>
                     <p class="card-text">Short description</p>
