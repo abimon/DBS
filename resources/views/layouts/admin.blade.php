@@ -14,6 +14,16 @@
                 </a>
             </li>
             <li class="mb-3 btn bg-transparent">
+                <a href="/guest" style="text-decoration: none; overflow:hidden; text-wrap:nowrap" class='prim'>
+                    <i class="bi bi-journal-bookmark-fill"></i> Guest Content
+                </a>
+            </li>
+            <li class="mb-3 btn bg-transparent">
+                <a href="/logged" style="text-decoration: none; overflow:hidden; text-wrap:nowrap" class='prim'>
+                    <i class="bi bi-journal-bookmark-fill"></i> User Content
+                </a>
+            </li>
+            <li class="mb-3 btn bg-transparent">
                 <a href="" style="text-decoration: none;overflow:hidden; text-wrap:nowrap" class='prim'>
                     <i class="bi bi-people-fill"></i> Community
                 </a>

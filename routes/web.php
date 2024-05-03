@@ -15,13 +15,16 @@ Route::get('/courses', function () {
 Route::get('/profile', function () {
     return view('dashboard.profile');
 });
-Route::get('/coursecont', function () {
+Route::get('/guest', function () {
     if(Auth()->user()){
-        return view('dashboard.logged');
+        
     }
     else{
         return view('dashboard.guest');
     }
+});
+Route::get('logged', function(){
+    return view('dashboard.logged');
 });
 Route::get('intro',function(){
     return view('dashboard.intro');
