@@ -25,7 +25,7 @@
             </li>
             <li class="mb-3 btn bg-transparent">
                 <a href="" style="text-decoration: none;overflow:hidden; text-wrap:nowrap" class='prim'>
-                    <i class="bi bi-people-fill"></i> Community
+                    <i class="bi bi-people-fill"></i> Students
                 </a>
             </li>
             <li class="mb-3 btn bg-transparent">
