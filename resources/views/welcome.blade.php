@@ -18,11 +18,11 @@
     <div class="row programs">
         <div class="col-md-4 col-6">
             <div><i class="bi bi-book"></i></div>
-            <p class="prim text-center">Guide Lessons</p>
+            <p class="prim text-center">Guided Lessons</p>
         </div>
         <div class="col-md-4 col-6">
             <div><i class="bi bi-collection"></i></div>
-            <p>Free Resource</p>
+            <p>Free Resources</p>
         </div>
         <div class="col-md-4 col-6">
             <div><i class="bi bi-people"></i></div>
@@ -96,35 +96,6 @@
             <button class="btn btn-outline-light">Contact us</button>
         </div>
     </div>
-    <div class="bottom">
-        <div class="row p-3 d-flex justify-content-between" id="connect">
-            <div class="col-md-4  text-start p-2">
-                <div class="title">Stay Connected</div>
-                <p>Be the first to know about news, events and more here at DBS</p>
-                <form action="" method="post">
-                    <input type="email" name="email" placeholder="ENTER EMAIL ADDRESS" class="form-control">
-                </form>
-            </div>
-            <div class="col-md-1"></div>
-            <div class="col-md-3 text-start p-2">
-                <div class="title">Resources</div>
-                <p>Ipsum</p>
-                <p>Blog</p>
-                <p>Podcast</p>
-                <p>Sermons</p>
-                <p>Devotionals</p>
-                <p>Lorem ipsum</p>
-            </div>
-            <div class="col-md-2 text-start p-2">
-                <div class="title">Connect</div>
-                <p><i class="bi bi-facebook"></i> <i class="bi bi-twitter-x"></i></p>
-            </div>
-            <div class="col-md-1"></div>
-            <div class="mt-1 mail">
-                <i class="bi bi-envelope"></i> info@thehearted.org
-            </div>
-        </div>
-
-    </div>
+    
 </div>
 @endsection

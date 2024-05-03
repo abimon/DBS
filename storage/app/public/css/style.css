@@ -5,23 +5,25 @@
 .bg-prim {
     background-color: #141430;
 }
-main{
-    min-height: 78vh;
+
+html {
+    background-color: rgb(127, 255, 249);
 }
+
 /*********************************
  * HOME *
 *********************************/
-.school{
+.school {
     padding-top: 5vh;
     padding-bottom: 5vh;
 }
+
 .school h1 {
     color: white;
     font-size: 3.8vw;
     text-align: left;
     text-transform: uppercase;
 }
-
 
 .school p {
     color: white;
@@ -36,6 +38,15 @@ main{
     color: white;
     background-color: #141430;
     font-family: Montserrat;
+}
+
+.banner {
+    z-index: -1;
+    height: 30vh;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    color: aliceblue;
 }
 
 .about {
@@ -76,117 +87,186 @@ main{
 .programs i {
     font-size: 4em;
 }
-#about_program{
+
+#about_program {
     margin: 5%;
-    border-radius: 12px;
+    border-radius: 24px;
     color: #141430;
     background-color: rgb(212, 247, 236);
     padding: 2vw;
-    
+
 }
-#about_program .row{
-    margin-left:10%;
-    width:80%;
+
+#about_program .row {
+    margin-left: 10%;
+    width: 80%;
 }
-#about_program h1{
-    font-family: Brandon Grotesque;
+
+#about_program h1 {
+    font-family: Montserrat;
     font-weight: bolder;
     text-align: center;
 }
-#about_program h2{
+
+#about_program h2 {
     font-family: Montserrat;
-    font-weight:bold;
+    font-weight: bold;
 }
-#about_program .program{
+
+#about_program .program {
     font-family: Montserrat;
-    color:black;
+    color: black;
     margin-top: 2vh;
     font-weight: bold;
 }
-#message{
+
+#message {
     margin-right: 5%;
     margin-left: 5%;
     padding: 2vw;
 }
-#message h1{
+
+#message h1 {
     font-weight: bolder;
     color: #141430;
-    font-family: Brandon Grotesque;
+    font-family: Montserrat;
 }
-#message a{
+
+#message a {
     font-family: Montserrat;
     color: #141430;
-    font-weight:bold;
+    font-weight: bold;
     text-decoration: none;
 }
-#message button{
+
+#message button {
     border-radius: 20px;
     font-size: 4vh;
     font-weight: bold;
     font-family: Montserrat;
     background-color: #141430;
-    color:white;
+    color: white;
 }
-#help{
+
+#help {
     padding: 15vh 0 15vh 0;
     margin-top: 10vh;
     background-position: center;
 }
-#help .title{
+
+#help .title {
     text-align: center;
     font-weight: bold;
     font-size: 6vw;
     color: white;
-    font-family: Brandon Grotesque;
+    font-family: Montserrat;
 }
-#help button{
+
+#help button {
     border-radius: 20px;
     font-size: 2vw;
     font-weight: bold;
     font-family: Montserrat;
 }
-#connect{
-    margin:3vw;
+
+#connect {
+    margin: 0px 3vw 0px 3vw;
     font-family: Montserrat;
-    color:#141430;
+    color: #141430;
+
 }
-#connect .title{
+
+#connect .title {
     font-weight: bolder;
     font-style: italic;
-    font-family: Brandon Grotesque;
-    font-size:3vw;
+    font-family: Montserrat;
+    /* font-size:3vw; */
 }
-#connect input{
+
+#connect input {
     border: none;
 }
+
 #connect p {
+    font-weight: bold;
+    font-size: 1.2vw;
+}
+
+#connect input:focus {
+    border: none;
+    border-bottom: 2px solid #141430;
+    
+}
+#connect input{
+    background-color: rgb(212, 247, 236);
+}
+#connect input::placeholder {
+    font-weight: bold;
+    color: #141430;
+    font-family: Montserrat;
+}
+
+.bottom {
+    margin: 0;
+    background-color: rgb(212, 247, 236);
+}
+
+.bottom .mail {
     font-weight: bold;
     font-size: 1.5vw;
 }
-#connect input:focus{
-    border:none;
-    border-bottom: 2px solid #141430;
-}
-#connect input::placeholder{
-    font-weight: bold;
-    color:#141430;
-    font-family: Montserrat;
-}
-.bottom{
-    margin:0;
-    /* background-color: rgb(212, 247, 236); */
-}
-.bottom .mail{
-    font-weight: bold;
-    font-size:1.5vw;
-}
-.form{
+
+.form {
     background-color: #141430;
-    padding:2vw;
+    padding: 2vw;
     border-radius: 12px;
-    font-family: Brandon Grotesque;
+    font-family: Montserrat;
     font-weight: bold;
 }
+
+.left-sidebar .upgrade-btn {
+    display: none;
+}
+
+.login {
+    text-decoration: none;
+    font-weight: bold;
+    text-align: center;
+    color: #141430;
+}
+#profile{
+    background-color: rgb(212, 247, 236);
+    min-height: 100vh;
+}
+#profile .car{
+    background-color: rgb(212, 247, 236);
+    border-radius: 12px;
+    padding: 0;
+}
+#profile .car img{
+    object-fit: cover;
+    height: 20vh;
+    margin: 0px;
+    border-radius: 12px 12px 0px 0px;
+    /* image-orientation: 10deg; */
+}
+#profile .car .icon{
+    position: relative;
+    z-index: 1;
+    top: -1em;
+    color: black;
+    font-weight: bolder;
+    border-radius: 50%;
+    width: 2em;
+    height: 2em;
+    text-align: center;
+    background-color: rgb(212, 247, 236);
+    font-size: 4em;
+}
+.progression ul{
+    list-style: none;
+}
+
 footer {
     background-color: #141430;
     color: white;
@@ -199,6 +279,7 @@ footer {
     .school h1 {
         font-size: 4.8vw;
     }
+
     .school p {
         font-size: 3vw;
     }

@@ -10,7 +10,7 @@
     @if(request()->path()=='/')
     <title>The Heart-Ed | Home</title>
     @else
-    <title >The Heart-Ed | {{request()->path()}}</title>
+    <title>The Heart-Ed | {{request()->path()}}</title>
     @endif
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.bunny.net">
@@ -64,8 +64,37 @@
             </div>
         </nav>
 
-        <main class="bg-transparent" >
+        <main class="bg-transparent">
             @yield('content')
+            <div class="bottom p-start">
+                <div class="row p-3 d-flex justify-content-between" id="connect">
+                    <div class="col-md-4  text-start p-2">
+                        <h3 class="title">Stay Connected</h3>
+                        <p>Be the first to know about news, events and more here at DBS</p>
+                        <form action="" method="post">
+                            <input type="email" name="email" placeholder="ENTER EMAIL ADDRESS" class="form-control">
+                        </form>
+                    </div>
+                    <div class="col-md-1"></div>
+                    <div class="col-md-3 text-start p-2">
+                        <h3 class="title">Resources</h3>
+                        <p>Ipsum</p>
+                        <p>Blog</p>
+                        <p>Podcast</p>
+                        <p>Sermons</p>
+                        <p>Devotionals</p>
+                        <p>Lorem ipsum</p>
+                    </div>
+                    <div class="col-md-2 text-start p-2">
+                        <h3 class="title">Connect</h3>
+                        <p style="font-size: xx-large; text-align:center"><i class="bi bi-facebook"></i> <i class="bi bi-twitter-x"></i></p>
+                    </div>
+                    <div class="col-md-1"></div>
+                    <div class="mt-1 mail">
+                        <i class="bi bi-envelope"></i> info@thehearted.org
+                    </div>
+                </div>
+            </div>
         </main>
         <footer>
             <div class="text-center">&copy; {{date('Y')}}. All rights reserved</div>
