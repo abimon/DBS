@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\LessonController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -16,19 +17,17 @@ Route::get('/profile', function () {
     return view('dashboard.profile');
 });
 Route::get('/guest', function () {
-    if(Auth()->user()){
-        
-    }
-    else{
-        return view('dashboard.guest');
-    }
+    return view('dashboard.guest');
 });
-Route::get('logged', function(){
+Route::get('/logged', function(){
     return view('dashboard.logged');
 });
-Route::get('intro',function(){
+Route::get('/intro',function(){
     return view('dashboard.intro');
 });
+Route::resources([
+    'lesson'=>LessonController::class
+]);
 Auth::routes();
 
 Route::get('/home', function(){return redirect('/');});

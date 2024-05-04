@@ -3,42 +3,55 @@
 <div class="d-flex justify-content-start row" id="profile">
     <div class="col-2">
         <ul style="list-style: none; margin-left:0px;" class="h-75 mt-3 fw-bold">
-            <li class="mb-3 btn bg-transparent">
+            <li class="mb-3 fw-medium bg-transparent">
                 <a href="/profile" style="text-decoration: none;overflow:hidden; text-wrap:nowrap" class='prim'>
                     <i class="bi bi-person-square"></i> Profile
                 </a>
             </li>
-            <li class="mb-3 btn bg-transparent">
-                <a href="/courses" style="text-decoration: none; overflow:hidden; text-wrap:nowrap" class='prim'>
+            <li class="mb-3 fw-medium bg-transparent">
+                <div style="text-decoration: none; overflow:hidden; text-wrap:nowrap" class='prim' type='button' data-bs-toggle="collapse" data-bs-target="#course" aria-expanded="false" aria-controls="collapseExample">
                     <i class="bi bi-journal-bookmark-fill"></i> Courses
-                </a>
+                </div>
+                <div class="collapse offset-2" id="course">
+                    <div>
+                        <div class="mt-3">
+                            <a class="text-decoration-none prim" href="#">All Lesson</a>
+                        </div>
+                        <div class="mt-3">
+                            <a class="text-decoration-none prim" href="{{route('lesson.index')}}">Add Course</a>
+                        </div>
+                        <div class="mt-3">
+                            <a class="text-decoration-none prim" href="#">Edit Course</a>
+                        </div>
+                    </div>
+                </div>
             </li>
-            <li class="mb-3 btn bg-transparent">
+            <li class="mb-3 fw-medium bg-transparent">
                 <a href="/guest" style="text-decoration: none; overflow:hidden; text-wrap:nowrap" class='prim'>
                     <i class="bi bi-journal-bookmark-fill"></i> Guest Content
                 </a>
             </li>
-            <li class="mb-3 btn bg-transparent">
+            <li class="mb-3 fw-medium bg-transparent">
                 <a href="/logged" style="text-decoration: none; overflow:hidden; text-wrap:nowrap" class='prim'>
                     <i class="bi bi-journal-bookmark-fill"></i> User Content
                 </a>
             </li>
-            <li class="mb-3 btn bg-transparent">
+            <li class="mb-3 fw-medium bg-transparent">
                 <a href="" style="text-decoration: none;overflow:hidden; text-wrap:nowrap" class='prim'>
                     <i class="bi bi-people-fill"></i> Students
                 </a>
             </li>
-            <li class="mb-3 btn bg-transparent">
+            <li class="mb-3 fw-medium bg-transparent">
                 <a href="" style="text-decoration: none;overflow:hidden; text-wrap:nowrap" class='prim'>
                     <i class="bi bi-bell"></i> Notifications
                 </a>
             </li>
-            <li class="mb-3 btn bg-transparent">
+            <li class="mb-3 fw-medium bg-transparent">
                 <a href="" style="text-decoration: none;overflow:hidden; text-wrap:nowrap" class='prim'>
                     <i class="bi bi-gear"></i> Settings
                 </a>
             </li>
-            <li class="mb-3 btn bg-transparent">
+            <li class="mb-3 fw-medium bg-transparent">
                 <a class="text-danger" style="text-decoration: none;overflow:hidden; text-wrap:nowrap" href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();" aria-expanded="false">
                     <i class="bi bi-box-arrow-right"></i> Logout
                 </a>
@@ -57,26 +70,25 @@
 <script>
     var i = 4;
     for (j = 0; j < i; j++) {
-
         CKEDITOR.ClassicEditor
             .create(document.getElementById("editor" + j), {
-                toolbar: {
-                    items: [
-                        'exportPDF', 'exportWord', '|',
-                        'findAndReplace', 'selectAll', '|',
-                        'heading', '|', 'MathType', 'ChemType', '|',
-                        'bold', 'italic', 'strikethrough', 'underline', 'code', 'subscript', 'superscript', 'removeFormat', '|',
-                        'bulletedList', 'numberedList', 'todoList', '|',
-                        'outdent', 'indent', '|',
-                        'undo', 'redo', 'fontSize', 'fontFamily', 'fontColor', 'fontBackgroundColor', 'highlight', '|',
-                        'alignment', '|',
-                        'link', 'insertImage', 'blockQuote', 'insertTable', 'mediaEmbed', 'codeBlock', 'htmlEmbed', '|',
-                        'specialCharacters', 'horizontalLine', 'pageBreak', '|',
-                        'textPartLanguage', '|',
-                        'sourceEditing'
-                    ],
-                    shouldNotGroupWhenFull: true
-                },
+                // toolbar: {
+                //     items: [
+                //         'exportPDF', 'exportWord', '|',
+                //         'findAndReplace', 'selectAll', '|',
+                //         'heading', '|', 'MathType', 'ChemType', '|',
+                //         'bold', 'italic', 'strikethrough', 'underline', 'code', 'subscript', 'superscript', 'removeFormat', '|',
+                //         'bulletedList', 'numberedList', 'todoList', '|',
+                //         'outdent', 'indent', '|',
+                //         'undo', 'redo', 'fontSize', 'fontFamily', 'fontColor', 'fontBackgroundColor', 'highlight', '|',
+                //         'alignment', '|',
+                //         'link', 'insertImage', 'blockQuote', 'insertTable', 'mediaEmbed', 'codeBlock', 'htmlEmbed', '|',
+                //         'specialCharacters', 'horizontalLine', 'pageBreak', '|',
+                //         'textPartLanguage', '|',
+                //         'sourceEditing'
+                //     ],
+                //     shouldNotGroupWhenFull: true
+                // },
 
                 list: {
                     properties: {
@@ -202,6 +214,7 @@
             }).then(editor => {
                 editor.editing.view.change(writer => {
                     writer.setStyle('min-height', '100px', editor.editing.view.document.getRoot());
+                    writer.setStyle('background-color', 'transparent', editor.editing.view.document.getRoot());
                 });
             });
     }
