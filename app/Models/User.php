@@ -7,16 +7,26 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
+use Illuminate\Support\Facades\Cache;
+
 
 class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
 
     protected $fillable = [
-        'name',
+        'f_name',
+        'm_name',
+        'l_name',
+        'username',
         'email',
-        'role',
-        'password',
+        'contact',
+        'cover_photo',
+        'avatar',
+        'country',
+        'yob',
+        'biography',
+        'password'
     ];
 
     protected $hidden = [
@@ -24,13 +34,11 @@ class User extends Authenticatable
         'remember_token',
     ];
 
-    /**
-     * The attributes that should be cast.
-     *
-     * @var array<string, string>
-     */
     protected $casts = [
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+    public function isOnline(){
+        return Cache::has('is-online'.$this->id);
+    }
 }

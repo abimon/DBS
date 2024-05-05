@@ -21,10 +21,10 @@
                     <h5 class="card-title">{{$course['course']}}</h5>
                     <p class="card-text">Short description</p>
                     <div class="progress mb-2">
-                        <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%"></div>
+                        <div class="progress-bar progress-bar-striped progress-bar-animated bg-prim" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%"></div>
                     </div>
                     <div class="d-flex justify-content-between">
-                        <a href="#" class="btn btn-primary">Continue</a>
+                        <a href="#" class="btn bg-prim text-light">Continue</a>
                         <a href="#" class="btn btn-success">Join</a>
                     </div>
                 </div>

@@ -56,7 +56,9 @@
                         </li>
                         @else
                         <li class="nav-item ms-5">
-                            <a class="nav-link text-dark fw-bold" href="/dashboard">My account</a>
+                            <a class="nav-link text-dark fw-bold" href="/dashboard">
+                                <i class="bi bi-person-circle"></i> {{Auth()->user()->f_name}} {{Auth()->user()->l_name}}
+                            </a>
                         </li>
                         @endguest
                     </ul>

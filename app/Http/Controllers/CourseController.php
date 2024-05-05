@@ -2,17 +2,18 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Quiz;
+use App\Models\Course;
 use Illuminate\Http\Request;
 
-class QuizController extends Controller
+class CourseController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        //
+        $courses = Course::all();
+        return view('Lessons.index');
     }
 
     /**
@@ -34,7 +35,7 @@ class QuizController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Quiz $quiz)
+    public function show(Course $course)
     {
         //
     }
@@ -42,7 +43,7 @@ class QuizController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Quiz $quiz)
+    public function edit(Course $course)
     {
         //
     }
@@ -50,7 +51,7 @@ class QuizController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Quiz $quiz)
+    public function update(Request $request, Course $course)
     {
         //
     }
@@ -58,17 +59,8 @@ class QuizController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Quiz $quiz)
+    public function destroy(Course $course)
     {
         //
-    }
-    public function validator($request){
-        return $this->validate($request, [
-            'quiz_id' => 'required',
-            'question.*' => 'required',
-            'options' => 'required',
-            'options.*' => 'required',
-            'correct_answer' => 'required',
-        ]);
     }
 }

@@ -4,7 +4,7 @@
     <div class="bg-prim rounded p-2 w-100 mt-3">
         <h5 class="text-white ps-3">Add course</h5>
     </div>
-    <form action="{{route('lesson.store',['id'=>$id])}}" method="POST" enctype="multipart/form-data">
+    <form action="{{route('courses.update',['id'=>$id])}}" method="POST" enctype="multipart/form-data">
         @csrf
         <div class="car p-4 mt-3">
             <div class="d-flex justify-content-between mt-1 border-dark border-bottom">

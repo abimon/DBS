@@ -7,11 +7,20 @@
                 <img src="{{asset('storage/images/about.png')}}" class="w-100" alt="...">
                 <div class="card-body row d-flex justify-content-between">
                     <div class="col-md-3">
-                        <div class="icon"><i class="bi bi-person-fill"></i></div>
+                        <div class="icon">
+                        <img src="{{asset('storage/images/image1.png')}}" class="w-100" alt="..." style="object-fit: cover; border-radius:50%;">
+                        <!-- <i class="bi bi-person-fill"></i> -->
+                        </div>
                     </div>
-                    <div class=" col-md-8">
-                        <h5 class="card-title">Full Username</h5>
-                        <p class="card-text fw-bold">@user_slug <i class="bi bi-dot"></i> Joined {{date('F Y')}} <i class="bi bi-dot"></i> <span class="text-danger">Active now</span></p>
+                    <div class=" col-md-9">
+                        <h5 class="card-title">{{Auth()->user()->f_name}} {{Auth()->user()->m_name}} {{Auth()->user()->l_name}}</h5>
+                        <p class="card-text fw-bold">{{'@'.Auth()->user()->username}} <i class="bi bi-dot"></i> Joined {{date_format(Auth()->user()->created_at,'F Y')}} <i class="bi bi-dot"></i> <span class="text-danger">
+                            @if(Auth()->user()->isOnline())
+                            Active now
+                            @else
+                            Offline
+                            @endif
+                        </span></p>
                     </div>
                 </div>
             </div>
@@ -67,19 +76,19 @@
             <div class="">
                 <div class="row mb-3">
                     <div class="col-md-4 fw-bold">First Name</div>
-                    <div class="col-md-6">McSoff</div>
+                    <div class="col-md-6">{{Auth()->user()->f_name}}</div>
                 </div>
                 <div class="row mb-3">
                     <div class="col-md-4 fw-bold">Last Name</div>
-                    <div class="col-md-6">Leisenburg</div>
+                    <div class="col-md-6">{{Auth()->user()->l_name}}</div>
                 </div>
                 <div class="row mb-3">
                     <div class="col-md-4 fw-bold">Year of Birth</div>
-                    <div class="col-md-6">1986</div>
+                    <div class="col-md-6">{{Auth()->user()->yob}}</div>
                 </div>
                 <div class="row mb-3">
                     <div class="col-md-4 fw-bold">Country of Origin</div>
-                    <div class="col-md-6">Spain</div>
+                    <div class="col-md-6">{{Auth()->user()->country}}</div>
                 </div>
             </div>
         </div>
