@@ -28,7 +28,7 @@ class ModuleController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        return 'Success';
     }
 
     /**

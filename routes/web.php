@@ -13,7 +13,7 @@ Route::middleware('auth')->group(function(){
     Route::get('/dashboard', function () {
         return view('dashboard.dashboard');
     });
-    Route::get('/courses', function () {
+    Route::get('/course/{title}', function () {
         return view('dashboard.course');
     });
     Route::get('/profile', function () {

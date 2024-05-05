@@ -21,7 +21,7 @@ class CourseController extends Controller
      */
     public function create()
     {
-        //
+        return view('Lessons.course');
     }
 
     /**
@@ -29,7 +29,9 @@ class CourseController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $id = 1;
+        return view('Lessons.course2',compact('id'));
+        
     }
 
     /**
@@ -45,7 +47,7 @@ class CourseController extends Controller
      */
     public function edit(Course $course)
     {
-        //
+        
     }
 
     /**
@@ -53,7 +55,8 @@ class CourseController extends Controller
      */
     public function update(Request $request, Course $course)
     {
-        //
+        $id = 1;
+        return view('Lessons.course3',compact('id'));
     }
 
     /**
