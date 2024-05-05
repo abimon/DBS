@@ -15,7 +15,6 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('module_id');
             $table->string('title');
-            $table->longText('desription');
             $table->longText('body');
             $table->timestamps();
             $table->foreign('module_id')->references('id')->on('modules')->onDelete('cascade');

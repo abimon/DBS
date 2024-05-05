@@ -3,7 +3,7 @@
 <div class="d-flex justify-content-start row" id="profile" style="font-family: Montserrat;">
     <div class="col-2">
         <ul style="list-style: none; margin-left:0px;" class="h-75 mt-3 fw-bold">
-        <li class="mb-3 fw-medium bg-transparent">
+            <li class="mb-3 fw-medium bg-transparent">
                 <a href="/dashboard" style="text-decoration: none;overflow:hidden; text-wrap:nowrap" class='prim'>
                     <i class="bi bi-speedometer"></i> Dashboard
                 </a>
@@ -16,16 +16,6 @@
             <li class="mb-3 fw-medium bg-transparent">
                 <a href="{{route('courses.index')}}" style="text-decoration: none; overflow:hidden; text-wrap:nowrap" class='prim'>
                     <i class="bi bi-journal-bookmark-fill"></i> Courses
-                </a>
-            </li>
-            <li class="mb-3 fw-medium bg-transparent">
-                <a href="/guest" style="text-decoration: none; overflow:hidden; text-wrap:nowrap" class='prim'>
-                    <i class="bi bi-journal-bookmark-fill"></i> Guest Content
-                </a>
-            </li>
-            <li class="mb-3 fw-medium bg-transparent">
-                <a href="/logged" style="text-decoration: none; overflow:hidden; text-wrap:nowrap" class='prim'>
-                    <i class="bi bi-journal-bookmark-fill"></i> User Content
                 </a>
             </li>
             <li class="mb-3 fw-medium bg-transparent">
@@ -55,6 +45,18 @@
         </ul>
     </div>
     <div class="col-10">
+        @if (Session::has('success'))
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            {{ Session::get('success') }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+        @endif
+        @if (Session::has('error'))
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            {{ Session::get('error') }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+        @endif
         @yield('dash')
     </div>
 </div>

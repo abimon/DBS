@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Course;
 use App\Models\Module;
 use Illuminate\Http\Request;
 
@@ -12,28 +13,23 @@ class ModuleController extends Controller
      */
     public function index()
     {
-        //
+        $course = Course::findOrFail(request()->course);
+        return view('Lessons.course3',compact('course'));
     }
-
-    /**
-     * Show the form for creating a new resource.
-     */
     public function create()
     {
         //
     }
-
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(Request $request)
     {
-        return 'Success';
+        Module::create([
+            'course_id'=>request()->courseId,
+            'title'=>request()->title,
+            'description'=>request()->description,
+        ]);
+        return redirect()->back()->with('success','Success');
     }
 
-    /**
-     * Display the specified resource.
-     */
     public function show(Module $module)
     {
         //

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Course;
+use App\Models\Module;
 use Illuminate\Http\Request;
 
 class CourseController extends Controller
@@ -15,48 +16,50 @@ class CourseController extends Controller
         $courses = Course::all();
         return view('Lessons.index');
     }
-
-    /**
-     * Show the form for creating a new resource.
-     */
     public function create()
     {
         return view('Lessons.course');
     }
-
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(Request $request)
     {
-        $id = 1;
+        // dd(request());
+        $course=Course::create([
+            'author'=>Auth()->user()->id,
+            'title'=>request()->title,
+            'category'=>request()->category,
+            'description'=>request()->description,
+        ]);
+        $id = $course->id;
         return view('Lessons.course2',compact('id'));
         
     }
-
-    /**
-     * Display the specified resource.
-     */
     public function show(Course $course)
     {
         //
     }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
     public function edit(Course $course)
     {
         
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, Course $course)
+    public function update($id)
     {
-        $id = 1;
-        return view('Lessons.course3',compact('id'));
+        // dd(request());
+        
+        $course = Course::findOrFail($id);
+        if($course->cover_path == null){
+            if(request()->hasFile('cover')){
+                $extension = request()->file('cover')->getClientOriginalExtension();
+                $filename = uniqid().time(). '.' . $extension;
+                request()->file('cover')->storeAs('storage/covers', $filename);
+            }
+            else{
+                return redirect()->back()->with('error','No image found');
+            }
+            $course->cover_path=$filename;
+            $course->update();
+        }
+        return redirect(route('module.index',['course'=>$course]));
     }
 
     /**

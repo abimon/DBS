@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Lesson;
+use GrahamCampbell\ResultType\Success;
 use Illuminate\Http\Request;
 
 class LessonController extends Controller
@@ -28,15 +29,16 @@ class LessonController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Lesson::create([
+            'module_id'=>request()->courseId,
+            'title'=>request()->title,
+            'body'=>request()->body
+        ]);
+        return redirect()->back()->with('success','Success');
     }
-
-    /**
-     * Display the specified resource.
-     */
     public function show(Lesson $lesson)
     {
-        //
+        
     }
 
     /**
@@ -55,11 +57,9 @@ class LessonController extends Controller
         //
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(Lesson $lesson)
+    public function destroy($id)
     {
-        //
+        Lesson::destroy($id);
+        return redirect()->back()->with('success','Success delete.');
     }
 }
