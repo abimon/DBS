@@ -14,7 +14,7 @@ class CourseController extends Controller
     public function index()
     {
         $courses = Course::all();
-        return view('Lessons.index');
+        return view('Lessons.index',compact('courses'));
     }
     public function create()
     {
@@ -51,7 +51,7 @@ class CourseController extends Controller
             if(request()->hasFile('cover')){
                 $extension = request()->file('cover')->getClientOriginalExtension();
                 $filename = uniqid().time(). '.' . $extension;
-                request()->file('cover')->storeAs('storage/covers', $filename);
+                request()->file('cover')->storeAs('public/covers', $filename);
             }
             else{
                 return redirect()->back()->with('error','No image found');
