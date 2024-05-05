@@ -71,13 +71,13 @@
             @foreach($module->lessons as $t=>$lesson)
             <div class="btn rounded w-100 bg-light prim fw-medium mb-3">
                 <div class="d-flex justify-content-between">
-                    <div class="row" type="button" data-bs-toggle="collapse" data-bs-target="#collapse{{$t}}m{{$m}}" aria-expanded="false" aria-controls="collapse{{$t}}m{{$m}}">
-                        <div class="col-1"><i class="bi bi-chevron-down"></i></div>
-                        <div class="col-10">Lesson {{$t+1}}: {{$lesson->title}}</div>
+                    <div>
+                        Lesson {{$t+1}}: {{$lesson->title}}
                     </div>
-                    <div class="d-flex justify-content-between">
+                    <div>
 
                         <i class="btn bi bi-trash" type="button" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#delete{{$lesson->id}}"></i>
+                        <i class="bi bi-chevron-down" type="button" data-bs-toggle="collapse" data-bs-target="#collapse{{$t}}m{{$m}}" aria-expanded="false" aria-controls="collapse{{$t}}m{{$m}}"></i>
                         <!-- Modal -->
                         <div class="modal fade" id="delete{{$lesson->id}}" tabindex="-1" aria-labelledby="exampleModalLabel{{$lesson->id}}" aria-hidden="true">
                             <div class="modal-dialog">
