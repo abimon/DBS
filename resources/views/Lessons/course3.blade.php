@@ -69,7 +69,7 @@
                 </div>
             </div>
             @foreach($module->lessons as $t=>$lesson)
-            <div class="rounded w-100 bg-light prim fw-medium mb-3">
+            <div class="p-3 rounded w-100 bg-light prim fw-medium mb-3">
                 <div class="d-flex justify-content-between">
                     <div>
                         Lesson {{$t+1}}: {{$lesson->title}}
