@@ -71,7 +71,7 @@
             @foreach($module->lessons as $t=>$lesson)
             <div class="p-3 rounded w-100 bg-light prim fw-medium mb-3">
                 <div class="d-flex justify-content-between">
-                    <div>
+                    <div class="fw-bold">
                         Lesson {{$t+1}}: {{$lesson->title}}
                     </div>
                     <div>
