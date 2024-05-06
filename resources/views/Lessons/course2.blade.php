@@ -15,7 +15,7 @@
             <div class="mb-3">
                 <label for="profileImage" class="col-form-label">Course Cover Image</label>
                 <div class="m-3 card p-3 border-dark bg-transparent" style="border-style:dashed;">
-                    <img id="output" src="" style="width: 100%; object-fit:contain;"/>
+                    <img id="output" src="" style="width: 100%; object-fit:contain;" />
                     <input type="file" accept="image/jpeg, image/png, image/webp" name="cover" id="file" style="display: none;" class="form-control" onchange="loadFile(event)">
                     <div class="pt-2" id="desc">
                         <div class="text-center" style="font-size: xxx-large; font-weight:bolder;">

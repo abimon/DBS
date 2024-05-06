@@ -19,7 +19,7 @@
                 </a>
             </li>
             <li class="mb-3 fw-medium bg-transparent">
-                <a href="" style="text-decoration: none;overflow:hidden; text-wrap:nowrap" class='prim'>
+                <a href="{{route('user.index')}}" style="text-decoration: none;overflow:hidden; text-wrap:nowrap" class='prim'>
                     <i class="bi bi-people-fill"></i> Students
                 </a>
             </li>

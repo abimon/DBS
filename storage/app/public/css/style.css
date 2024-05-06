@@ -7,7 +7,7 @@
 }
 
 html {
-    background-color: rgb(127, 255, 249);
+    background-color: #E9F2F8;
 }
 
 /*********************************
@@ -72,6 +72,23 @@ html {
     font-family: Montserrat;
     font-size: 1.2vw;
 }
+.cover{
+    position: relative;
+}
+.camera {
+    z-index: 1;
+    top: 10px;
+    right: 10px;
+    position: absolute;
+    font-size: xx-large;
+}
+.cam {
+    z-index: 1;
+    top: 5px;
+    right: 5px;
+    position: absolute;
+    font-size: x-large;
+}
 
 .programs {
     margin-top: 22vh;
@@ -92,7 +109,7 @@ html {
     margin: 5%;
     border-radius: 24px;
     color: #141430;
-    background-color: rgb(212, 247, 236);
+    background-color: #E9F2F8;
     padding: 2vw;
 
 }
@@ -195,11 +212,13 @@ html {
 #connect input:focus {
     border: none;
     border-bottom: 2px solid #141430;
-    
+
 }
-#connect input{
-    background-color: rgb(212, 247, 236);
+
+#connect input {
+    background-color: #E9F2F8;
 }
+
 #connect input::placeholder {
     font-weight: bold;
     color: #141430;
@@ -208,7 +227,7 @@ html {
 
 .bottom {
     margin: 0;
-    background-color: rgb(212, 247, 236);
+    background-color: #E9F2F8;
 }
 
 .bottom .mail {
@@ -234,23 +253,27 @@ html {
     text-align: center;
     color: #141430;
 }
-#profile{
-    background-color: rgb(212, 247, 236);
+
+#profile {
+    background-color: #E9F2F8;
     min-height: 100vh;
 }
-#profile .car{
-    background-color: rgb(212, 247, 236);
+
+#profile .car {
+    background-color: #E9F2F8;
     border-radius: 12px;
     padding: 0;
 }
-#profile .car img{
+
+#profile .car img {
     object-fit: cover;
     height: 20vh;
     margin: 0px;
     border-radius: 12px 12px 0px 0px;
     /* image-orientation: 10deg; */
 }
-#profile .car .icon{
+
+#profile .car .icon {
     position: relative;
     z-index: 1;
     top: -1em;
@@ -260,10 +283,11 @@ html {
     width: 2em;
     height: 2em;
     text-align: center;
-    background-color: rgb(212, 247, 236);
+    background-color: #E9F2F8;
     font-size: 4em;
 }
-.progression ul{
+
+.progression ul {
     list-style: none;
 }
 
