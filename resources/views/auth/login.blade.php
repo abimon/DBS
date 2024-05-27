@@ -7,7 +7,7 @@
             <h1 class="text-light mb-2 mt-3 text-center">Log in</h1>
             <h2 class="mb-5 text-light text-center">Sign in to your account</h2>
             @csrf
-            <div class="mb-5">
+            <div class="mb-5 w-75">
                 <input id="email" type="email" class="form-control @error('email') is-invalid @enderror rounded-pill" placeholder="Email Address" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
                 @error('email')
                 <span class="invalid-feedback" role="alert">
@@ -15,7 +15,7 @@
                 </span>
                 @enderror
             </div>
-            <div class="mb-5">
+            <div class="mb-5 w-75">
                 <input id="password" type="password" class="form-control @error('password') is-invalid @enderror rounded-pill" placeholder="Password" name="password" required autocomplete="current-password">
                 @error('password')
                 <span class="invalid-feedback" role="alert">
