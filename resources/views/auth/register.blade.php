@@ -6,7 +6,7 @@
             <h1 class="mb-2 mt-3 text-light text-center">New account</h1>
             <h2 class="mb-3 text-light text-center">Create an account</h2>
             @csrf
-            <div class="d-flex justify-content-center">
+            <div class="justify-content-center">
 
                 <div class="mb-4 w-75">
                     <input id="f_name" type="text" class="form-control @error('f_name') is-invalid @enderror rounded-pill" name="f_name" placeholder="First Name" value="{{ old('f_name') }}" required autocomplete="f_name" autofocus>
