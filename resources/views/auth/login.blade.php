@@ -8,7 +8,7 @@
             <h2 class="mb-5 text-light text-center">Sign in to your account</h2>
             @csrf
             <div class="row d-flex justify-content-center">
-                <div class="col-md-10">
+                <div class="col-md-8">
                     <div class="mb-4">
                         <input id="email" type="email" class="form-control @error('email') is-invalid @enderror rounded-pill" placeholder="Email Address" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
                         @error('email')
