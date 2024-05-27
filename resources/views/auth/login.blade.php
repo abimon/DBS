@@ -38,7 +38,7 @@
             </div>
 
             <div class="d-flex justify-content-center">
-                <button type="submit" class="btn btn-outline-light text-white rounded-pill shadow ps-5 pe-5 pt-2 pb-2">
+                <button type="submit" class="btn btn-outline-light rounded-pill shadow ps-5 pe-5 pt-2 pb-2">
                     {{ __('Login') }}
                 </button>
             </div>
