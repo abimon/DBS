@@ -35,7 +35,7 @@
             </li>
             <li class="mb-5 fw-medium bg-transparent">
                 <a class="text-danger" style="text-decoration: none;overflow:hidden; text-wrap:nowrap" href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();" aria-expanded="false">
-                    <i class="bi bi-box-arrow-right"></i> Logout
+                    <i class="bi bi-power"></i> Logout
                 </a>
                 <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                     @csrf
