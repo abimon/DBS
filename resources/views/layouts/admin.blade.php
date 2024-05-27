@@ -2,38 +2,38 @@
 @section('content')
 <div class="d-flex justify-content-start row" id="profile" style="font-family: Montserrat;">
     <div class="col-2">
-        <ul style="list-style: none; margin-left:0px;" class="h-75 mt-3 fw-bold">
-            <li class="mb-3 fw-medium bg-transparent">
+        <ul style="list-style: none; margin-left:0px;" class="h-100 mt-3 fw-bold">
+            <li class="mb-5 fw-medium bg-transparent">
                 <a href="/dashboard" style="text-decoration: none;overflow:hidden; text-wrap:nowrap" class='prim'>
                     <i class="bi bi-speedometer"></i> Dashboard
                 </a>
             </li>
-            <li class="mb-3 fw-medium bg-transparent">
+            <li class="mb-5 fw-medium bg-transparent">
                 <a href="/profile" style="text-decoration: none;overflow:hidden; text-wrap:nowrap" class='prim'>
                     <i class="bi bi-person-square"></i> Profile
                 </a>
             </li>
-            <li class="mb-3 fw-medium bg-transparent">
+            <li class="mb-5 fw-medium bg-transparent">
                 <a href="{{route('courses.index')}}" style="text-decoration: none; overflow:hidden; text-wrap:nowrap" class='prim'>
                     <i class="bi bi-journal-bookmark-fill"></i> Courses
                 </a>
             </li>
-            <li class="mb-3 fw-medium bg-transparent">
+            <li class="mb-5 fw-medium bg-transparent">
                 <a href="{{route('user.index')}}" style="text-decoration: none;overflow:hidden; text-wrap:nowrap" class='prim'>
                     <i class="bi bi-people-fill"></i> Students
                 </a>
             </li>
-            <li class="mb-3 fw-medium bg-transparent">
+            <li class="mb-5 fw-medium bg-transparent">
                 <a href="" style="text-decoration: none;overflow:hidden; text-wrap:nowrap" class='prim'>
                     <i class="bi bi-bell"></i> Notifications
                 </a>
             </li>
-            <li class="mb-3 fw-medium bg-transparent">
+            <li class="mb-5 fw-medium bg-transparent">
                 <a href="" style="text-decoration: none;overflow:hidden; text-wrap:nowrap" class='prim'>
                     <i class="bi bi-gear"></i> Settings
                 </a>
             </li>
-            <li class="mb-3 fw-medium bg-transparent">
+            <li class="mb-5 fw-medium bg-transparent">
                 <a class="text-danger" style="text-decoration: none;overflow:hidden; text-wrap:nowrap" href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();" aria-expanded="false">
                     <i class="bi bi-box-arrow-right"></i> Logout
                 </a>

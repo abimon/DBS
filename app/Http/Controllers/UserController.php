@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Nation;
 use App\Models\User;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
@@ -65,9 +66,12 @@ class UserController extends Controller
             $user->yob=request()->yob;
         }
         if(request()->contact!=null){
-            $user->contact=request()->contact;
-        }
-        if(request()->country!=null){
+            $country = Nation::where('country',request()->country)->first();
+            $code = str_replace('+', '', substr($country->code, 0, 1)) . substr($country->code, 1);
+            $originalStr = request()->contact;
+            $prefix = substr($originalStr, 0, 1);
+            $contact= str_replace('0', $code, $prefix) . substr($originalStr, 1);
+            $user->contact=$contact;
             $user->country=request()->country;
         }
         if(request()->email!=null){

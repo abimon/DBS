@@ -121,11 +121,11 @@
                     </div>
                     <div class=" col-md-9">
                         <h5 class="card-title">{{Auth()->user()->f_name}} {{Auth()->user()->m_name}} {{Auth()->user()->l_name}}</h5>
-                        <p class="card-text fw-bold">{{'@'.Auth()->user()->username}} <i class="bi bi-dot"></i> Joined {{date_format(Auth()->user()->created_at,'F Y')}} <i class="bi bi-dot"></i> <span class="text-danger">
+                        <p class="card-text fw-bold">{{'@'.Auth()->user()->username}} <i class="bi bi-dot"></i> Joined {{date_format(Auth()->user()->created_at,'F Y')}} <i class="bi bi-dot"></i> 
                                 @if(Auth()->user()->isOnline())
-                                Active now
+                                <span class="text-success">Active now</span>
                                 @else
-                                Offline
+                                <span class="text-secondary">Offline</span>
                                 @endif
                             </span></p>
                     </div>
@@ -141,13 +141,13 @@
                             </div>
                         </div>
                         <div class="w-100 ms-0 fw-bold">
-                            <div class="row mt-1">
+                            <div class="row mt-3">
                                 <i class="bi {{$g==7 ? 'bi-circle-fill' : 'bi-circle'}} col-1"></i>
                                 <div class="col-9">General Information</div>
 
                                 <div class="col-1">{{$g}}/7</div>
                             </div>
-                            <div class="row mt-1">
+                            <div class="row mt-3">
                                 <i class="bi {{Auth()->user()->avatar != null?'bi-circle-fill':'bi-circle'}} col-1"></i>
                                 <div class="col-9">Profile Photo</div>
                                 <div class="col-1">
@@ -158,7 +158,7 @@
                                     @endif
                                 </div>
                             </div>
-                            <div class="row mt-1">
+                            <div class="row mt-3">
                                 <i class="bi {{Auth()->user()->cover_photo != null?'bi-circle-fill':'bi-circle'}} col-1"></i>
                                 <div class="col-9">Cover Photo</div>
                                 <div class="col-1">
@@ -169,7 +169,7 @@
                                     @endif
                                 </div>
                             </div>
-                            <div class="row mt-1">
+                            <div class="row mt-3">
                                 <i class="bi {{Auth()->user()->biography != null?'bi-circle-fill':'bi-circle'}} col-1"></i>
                                 <div class="col-9">Biography</div>
                                 <div class="col-1">
@@ -188,10 +188,10 @@
         <div class="accordion" id="accordionExample">
             <nav class="nav">
                 <a class="nav-link fw-bold prim active" type="button" data-bs-toggle="collapse" data-bs-target="#general" aria-expanded="true" aria-controls="collapseOne" aria-current="page" href="#">Profile</a>
-                <a class="nav-link fw-bold prim" href="#" type="button" data-bs-toggle="collapse" data-bs-target="#biography" aria-expanded="true" aria-controls="collapseOne" aria-current="page">Bioraphy</a>
-                <a class="nav-link fw-bold prim" href="#">Groups</a>
+                <a class="nav-link fw-bold prim" href="#" type="button" data-bs-toggle="collapse" data-bs-target="#biography" aria-expanded="true" aria-controls="collapseOne" aria-current="page">Biography</a>
+                <!-- <a class="nav-link fw-bold prim" href="#">Groups</a>
                 <a class="nav-link fw-bold prim" href="#">Forums</a>
-                <a class="nav-link fw-bold prim" aria-disabled="true">Friends</a>
+                <a class="nav-link fw-bold prim" aria-disabled="true">Friends</a> -->
             </nav>
             <div id="general" class="p-5 rounded accordion-collapse collapse show" data-bs-parent="#accordionExample" style="background-color: #E9F2F8;">
                 <div class="d-flex justify-content-between">
@@ -233,7 +233,18 @@
                                         </div>
                                         <div class="mb-3">
                                             <label for="">Country of Origin</label>
-                                            <input type="text" class="form-control" name="country" value="{{Auth()->user()->country}}">
+                                            <select name="country" require id="" class="form-select">
+                                                @if(Auth()->user()->country == null)
+                                                <option>--- Select Country of Origin ---</option>
+                                                @endif
+                                                @foreach($nations as $nation)
+                                                <?php 
+                                                $n=Auth()->user()->country;
+                                                $c = $nation->country;
+                                                ?>
+                                                <option value="{{$nation->country}}" {{$n == $c?'selected':''}}>{{$nation->country}}</option>
+                                                @endforeach
+                                            </select>
                                         </div>
                                         <div class="mb-3">
                                             <label for="">Year of Birth</label>
@@ -264,6 +275,14 @@
                         <div class="col-md-6">{{Auth()->user()->l_name}}</div>
                     </div>
                     <div class="row mb-3">
+                        <div class="col-md-4 fw-bold">Phone No.</div>
+                        <div class="col-md-6">+{{Auth()->user()->contact}}</div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-md-4 fw-bold">Email</div>
+                        <div class="col-md-6">{{Auth()->user()->email}}</div>
+                    </div>
+                    <div class="row mb-3">
                         <div class="col-md-4 fw-bold">Year of Birth</div>
                         <div class="col-md-6">{{Auth()->user()->yob}}</div>
                     </div>
@@ -271,6 +290,7 @@
                         <div class="col-md-4 fw-bold">Country of Origin</div>
                         <div class="col-md-6">{{Auth()->user()->country}}</div>
                     </div>
+                    
                 </div>
             </div>
             <div id="biography" class="p-5 rounded accordion-collapse collapse" data-bs-parent="#accordionExample" style="background-color: #E9F2F8;">

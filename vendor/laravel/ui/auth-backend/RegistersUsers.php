@@ -2,6 +2,7 @@
 
 namespace Illuminate\Foundation\Auth;
 
+
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
@@ -11,13 +12,9 @@ trait RegistersUsers
 {
     use RedirectsUsers;
 
-    /**
-     * Show the application registration form.
-     *
-     * @return \Illuminate\View\View
-     */
     public function showRegistrationForm()
     {
+        
         return view('auth.register');
     }
 
