@@ -238,10 +238,11 @@ html {
 
 .form {
     background-color: #141430;
-    padding: 2vw;
+    padding: 4vw;
     border-radius: 12px;
     font-family: Montserrat;
     font-weight: bold;
+
 }
 
 .left-sidebar .upgrade-btn {
