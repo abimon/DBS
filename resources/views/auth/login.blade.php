@@ -8,8 +8,8 @@
             <h2 class="mb-5 text-light text-center">Sign in to your account</h2>
             @csrf
             <div class="row d-flex justify-content-center">
-                <div class="col-md-8">
-                    <div class="mb-5 w-75">
+                <div class="col-md-10">
+                    <div class="mb-4">
                         <input id="email" type="email" class="form-control @error('email') is-invalid @enderror rounded-pill" placeholder="Email Address" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
                         @error('email')
                         <span class="invalid-feedback" role="alert">
@@ -17,7 +17,7 @@
                         </span>
                         @enderror
                     </div>
-                    <div class="mb-5 w-75">
+                    <div class="mb-4">
                         <input id="password" type="password" class="form-control @error('password') is-invalid @enderror rounded-pill" placeholder="Password" name="password" required autocomplete="current-password">
                         @error('password')
                         <span class="invalid-feedback" role="alert">
@@ -28,7 +28,7 @@
                 </div>
             </div>
 
-            <div class="d-flex justify-content-between mb-5 ms-2 me-2">
+            <div class="d-flex justify-content-between mb-4 ms-2 me-2">
                 <div class="text-white">
                     <input class="form-check-input" type="checkbox" name="remember" id="remember">
                     {{ __('Remember Me?') }}
