@@ -42,18 +42,19 @@
                             <a class="nav-link text-dark fw-bold" href="/">Home</a>
                         </li>
                         <li class="nav-item ms-5">
-                            <a class="nav-link text-dark fw-bold" href="">Resources</a>
+                            <a class="nav-link text-dark fw-bold" href="/#resources">Resources</a>
                         </li>
                         <li class="nav-item ms-5">
-                            <a class="nav-link text-dark fw-bold" href="">About</a>
+                            <a class="nav-link text-dark fw-bold" href="/#aboutUs">About</a>
                         </li>
                         <li class="nav-item ms-5">
-                            <a class="nav-link text-dark fw-bold" href="">Academics</a>
+                            <a class="nav-link text-dark fw-bold" href="">Study Room</a>
                         </li>
                         @guest
                         <li class="nav-item ms-5">
                             <a class="nav-link" href="{{route('login')}}"> <button class="button">Sign In</button></a>
                         </li>
+                        
                         @else
                         <li class="nav-item ms-5">
                             <a class="nav-link text-dark fw-bold" href="/dashboard">
@@ -83,18 +84,17 @@
                         <h3 class="title">Stay Connected</h3>
                         <p>Be the first to know about news, events and more here at DBS</p>
                         <form action="" method="post">
+                            @csrf
                             <input type="email" name="email" placeholder="ENTER EMAIL ADDRESS" class="form-control">
                         </form>
                     </div>
                     <div class="col-md-1"></div>
                     <div class="col-md-3 text-start p-2">
                         <h3 class="title">Resources</h3>
-                        <p>Ipsum</p>
                         <p>Blog</p>
                         <p>Podcast</p>
                         <p>Sermons</p>
                         <p>Devotionals</p>
-                        <p>Lorem ipsum</p>
                     </div>
                     <div class="col-md-2 text-start p-2">
                         <h3 class="title">Connect</h3>

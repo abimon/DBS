@@ -2,7 +2,11 @@
 @section('content')
 <div class="d-flex justify-content-start row" id="profile" style="font-family: Montserrat;">
     <div class="col-2">
+
         <ul style="list-style: none; margin-left:0px;" class="h-100 mt-3 fw-bold">
+            <li class="mb-5  bg-transparent">
+                <h4 style="font-weight:bold">{{Auth()->user()->role}} Panel</h4>
+            </li>
             <li class="mb-5 fw-medium bg-transparent">
                 <a href="/dashboard" style="text-decoration: none;overflow:hidden; text-wrap:nowrap" class='prim'>
                     <i class="bi bi-speedometer"></i> Dashboard
@@ -18,19 +22,22 @@
                     <i class="bi bi-journal-bookmark-fill"></i> Courses
                 </a>
             </li>
+            @if (Auth()->user()->role == 'Admin')
             <li class="mb-5 fw-medium bg-transparent">
                 <a href="{{route('user.index')}}" style="text-decoration: none;overflow:hidden; text-wrap:nowrap" class='prim'>
-                    <i class="bi bi-people-fill"></i> Students
+                    <i class="bi bi-people-fill"></i> Registered Users
                 </a>
             </li>
+            @else
+            <li class="mb-5 fw-medium bg-transparent">
+                <a href="/courses/MyCourses" style="text-decoration: none; overflow:hidden; text-wrap:nowrap" class='prim'>
+                    <i class="bi bi-journal-bookmark-fill"></i> My Courses
+                </a>
+            </li>
+            @endif
             <li class="mb-5 fw-medium bg-transparent">
                 <a href="" style="text-decoration: none;overflow:hidden; text-wrap:nowrap" class='prim'>
                     <i class="bi bi-bell"></i> Notifications
-                </a>
-            </li>
-            <li class="mb-5 fw-medium bg-transparent">
-                <a href="" style="text-decoration: none;overflow:hidden; text-wrap:nowrap" class='prim'>
-                    <i class="bi bi-gear"></i> Settings
                 </a>
             </li>
             <li class="mb-5 fw-medium bg-transparent">

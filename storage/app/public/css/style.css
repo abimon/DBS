@@ -16,7 +16,6 @@ html {
 .school {
     padding-top: 5vh;
     padding-bottom: 5vh;
-    height: 40vh;
 }
 
 .school h1 {
@@ -24,6 +23,8 @@ html {
     font-size: 3.8vw;
     text-align: left;
     text-transform: uppercase;
+    font-family: Montserrat;
+    font-weight: bold;
 }
 
 .school p {
@@ -51,10 +52,10 @@ html {
 }
 
 .about {
-    width: 40vw;
-    position: absolute;
-    left: 30%;
-    top: 40%;
+    width: 50%;
+    position: relative;
+    left: 25%;
+    top: -20vh;
     z-index: 1;
     border-radius: 12px;
     text-align: center;
@@ -72,6 +73,34 @@ html {
     color: white;
     font-family: Montserrat;
     font-size: 1.2vw;
+}
+.dropdown-toggle{
+    border:2px solid #141430;
+    width: 100%;
+}
+@media (max-width:760px) {
+    .button{
+        display: none;
+    }
+    .school h1 {
+        font-size: 4.8vw;
+    }
+
+    .school p {
+        font-size: 3vw;
+    }
+    .about {
+        width: 80%;
+        left: 10%;
+    }
+
+    .about h2 {
+        font-size: 3vw;
+    }
+
+    .about p {
+        font-size: 2.2vw;
+    }
 }
 .cover{
     position: relative;
@@ -92,7 +121,10 @@ html {
 }
 
 .programs {
-    margin-top: 22vh;
+    position: relative;
+    z-index: 1;
+    font-weight: bolder;
+    background-color: #E9F2F8;
     color: #141430;
     text-align: center;
 }
@@ -157,8 +189,8 @@ html {
     text-decoration: none;
 }
 
-#message button {
-    border-radius: 20px;
+.mbutton {
+    border-radius: 15px;
     font-size: 4vh;
     font-weight: bold;
     font-family: Montserrat;
@@ -196,13 +228,12 @@ html {
 
 #connect .title {
     font-weight: bolder;
-    font-style: italic;
     font-family: Montserrat;
     /* font-size:3vw; */
 }
 
 #connect input {
-    border: none;
+    border:2px solid #141430;
 }
 
 #connect p {
@@ -301,26 +332,3 @@ footer {
     padding-bottom: 3vh;
 }
 
-@media (max-width:760px) {
-    .school h1 {
-        font-size: 4.8vw;
-    }
-
-    .school p {
-        font-size: 3vw;
-    }
-
-    .about {
-        top: 30%;
-        width: 60vw;
-        right: 10%;
-    }
-
-    .about h2 {
-        font-size: 3vw;
-    }
-
-    .about p {
-        font-size: 2.2vw;
-    }
-}
