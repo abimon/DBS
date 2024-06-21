@@ -137,7 +137,7 @@
                         <h5 class="card-title"><b>Complete your profile</b></h5>
                         <div class="" height="75">
                             <div class="progress" role="progressbar" aria-label="Example with label" aria-valuenow="{{$per}}" aria-valuemin="0" aria-valuemax="100">
-                                <div class="progress-bar bg-prim" style="width: {{$per}}%;">{{$per}}%</div>
+                                <div class="progress-bar bg-prim" style="width: {{$per}}%">{{$per}}%</div>
                             </div>
                         </div>
                         <div class="w-100 ms-0 fw-bold">

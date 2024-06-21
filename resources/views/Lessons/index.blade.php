@@ -24,7 +24,6 @@
                 <a class="btn dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     Category
                 </a>
-
                 <ul class="dropdown-menu">
                     <li><a class="dropdown-item" href="#">Action</a></li>
                     <li><a class="dropdown-item" href="#">Another action</a></li>
@@ -55,25 +54,25 @@
                     <div class="d-flex justify-content-between">
                         <div>
                             <h5 class="card-title">{{$course->title}}</h5>
-                            <small>{{$course->category}}</small>
+                            <!-- <small>{{$course->category}}</small> -->
+                            <small class="text-secondary">
+                                <i class="bi bi-book-half"></i>
+                                {{$course->modules->count()}} Module(s)
+                            </small>
                         </div>
+                        @if (Auth()->user()->role == "Admin")
                         <div class="bi bi-people"> {{16*$k}}</div>
+                        @endif
                     </div>
-                    <div class="card-text h-50" style="overflow: hidden;">
-                        <?php echo html_entity_decode($course->description) ?>
+                    <div class="card-text ">
+                        <?php echo html_entity_decode(mb_substr($course->description,0,250)); ?>
                     </div>
-                    <div class="fw-bold text-end">
-                        <a href="{{route('module.index',['course'=>$course->id])}}" class="prim text-decoration-none">
-                            <i class="bi bi-copies"></i>
-                            {{$course->modules->count()}} Modules
-                        </a>
-                    </div>
-                    <div class="d-flex justify-content-between">
+                    <div class="d-flex justify-content-between mt-3">
                         <a href="/course/{{$k}}" class="btn bg-prim text-light">
-                            View
-                        </a>
-                        <a href="/enroll/{{$k}}" class="btn btn-success">
                             Enroll
+                        </a>
+                        <a href="{{route('module.index',['course'=>$course->id])}}" class="btn bg-prim text-light">
+                            Resume <i class="bi bi-arrow-right"></i>
                         </a>
                     </div>
                 </div>
