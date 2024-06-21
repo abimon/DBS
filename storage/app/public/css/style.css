@@ -133,9 +133,11 @@ html {
     font-weight: bold;
     font-family: Montserrat;
 }
-
+#resources p{
+    font-size: 3vw;
+}
 .programs i {
-    font-size: 4em;
+    font-size: 4vw;
 }
 
 #about_program {
