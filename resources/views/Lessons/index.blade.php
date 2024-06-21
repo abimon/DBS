@@ -45,7 +45,7 @@
             </div>
         </div>
     </div>
-    <div class="row d-flex justify-content-between">
+    <div class="row ">
         @foreach($courses as $k=>$course)
         <div class="col-md-4 p-2">
             <div class="card h-100">
