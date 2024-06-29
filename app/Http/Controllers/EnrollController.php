@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Course;
 use App\Models\Enroll;
 use Illuminate\Http\Request;
 
@@ -43,9 +44,10 @@ class EnrollController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Enroll $enroll)
+    public function show($id)
     {
-        
+        $course = Course::findOrFail($id);
+        return view('Courses.course',compact('course'));
     }
 
     /**

@@ -28,7 +28,7 @@
                                 <i class="bi bi-dash-circle"></i> Drop
                             </button>
                         </form>
-                        <a href="{{route('module.index',['course'=>$course->course->id])}}" class="btn bg-prim text-light">
+                        <a href="{{route('enroll.show',$course->course_id)}}" class="btn bg-prim text-light">
                             Resume <i class="bi bi-arrow-right"></i>
                         </a>
                     </div>
