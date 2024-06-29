@@ -26,9 +26,18 @@ class EnrollController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store()
     {
-        //
+        $enroll = Enroll::where([['user_id', Auth()->user()->id], ['course_id', request()->course_id]])->first();
+        if(!$enroll){
+            Enroll::create([
+                'user_id'=>Auth()->user()->id,
+                'course_id'=>request()->course_id,
+                'progress'=>0
+            ]);
+            return back()->with('success','Enrollment successful.');
+        }
+        return back()->with('error','You are already enrolled for this course.');
     }
 
     /**
@@ -36,7 +45,7 @@ class EnrollController extends Controller
      */
     public function show(Enroll $enroll)
     {
-        //
+        
     }
 
     /**
@@ -58,8 +67,9 @@ class EnrollController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Enroll $enroll)
+    public function destroy($id)
     {
-        //
+        Enroll::destroy($id);
+        return back()->with('success','Course dropped successfully.');
     }
 }

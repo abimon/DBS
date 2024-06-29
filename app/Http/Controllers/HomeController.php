@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Course;
 use App\Models\Nation;
 use Illuminate\Http\Request;
 
@@ -44,5 +45,9 @@ class HomeController extends Controller
         $nations = Nation::all();
 
         return view('dashboard.profile',compact('score','per','g','nations'));
+    }
+    public function dashboard(){
+        $courses = Course::orderBy('created_at','desc')->take(6)->latest()->get();
+        return view('dashboard.dashboard',compact('courses'));
     }
 }

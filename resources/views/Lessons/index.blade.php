@@ -65,7 +65,7 @@
                         @endif
                     </div>
                     <div class="card-text ">
-                        <?php echo html_entity_decode(mb_substr($course->description, 0, 250)); ?>
+                        <?php echo mb_substr(html_entity_decode($course->description), 0, 100); ?>
                     </div>
                     <div class="d-flex justify-content-between mt-3">
                         <a href="/course/{{$k}}" class="btn bg-prim text-light">

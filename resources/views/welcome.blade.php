@@ -10,11 +10,11 @@
         </div>
     </div>
     <div class="programs">
-        <div id="aboutUs" class="about">
+        <div id="aboutUs" class="about p-2">
             <h2>Who we are</h2>
             <p>Digital Bible School is a Christian platform aimed at answering the pressing questions about bible doctrine in relation to the African and Youthful context. We draw from experience of both young and old Christian staff to bring to light the Bible truths with simplicity, with the guidance of the Holy Spirit. We believe that by interacting with the material in this platform, you will experience a richer Christian experience, even as you know more about this faith - Christianity.</p>
         </div>
-        <div class="row" id="resources">
+        <div class="row m-2" id="resources">
             <div class="col-4">
                 <div><i class="bi bi-book"></i></div>
                 <p class="prim text-center">Guided Lessons</p>

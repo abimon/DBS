@@ -48,29 +48,9 @@
                             <a class="nav-link text-dark fw-bold" href="/#aboutUs">About</a>
                         </li>
                         <li class="nav-item ms-5">
-                            <a class="nav-link text-dark fw-bold" href="">Study Room</a>
-                        </li>
-                        @guest
-                        <li class="nav-item ms-5">
-                            <a class="nav-link" href="{{route('login')}}"> <button class="button">Sign In</button></a>
+                            <a class="nav-link text-dark fw-bold" href="/dashboard">Study Room</a>
                         </li>
                         
-                        @else
-                        <li class="nav-item ms-5">
-                            <a class="nav-link text-dark fw-bold" href="/dashboard">
-                                <i class="bi bi-person-circle"></i> {{Auth()->user()->f_name}} {{Auth()->user()->l_name}}
-                            </a>
-                        </li>
-                        <li class="nav-item ms-5">
-                            <a class="text-danger nav-link fw-bold" style="text-decoration: none;overflow:hidden; text-wrap:nowrap" href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();" aria-expanded="false">
-                                <i class="bi bi-power"></i> Logout
-                            </a>
-                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                @csrf
-                            </form>
-                            </a>
-                        </li>
-                        @endguest
                     </ul>
                 </div>
             </div>

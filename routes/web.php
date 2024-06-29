@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CourseController;
+use App\Http\Controllers\EnrollController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LessonController;
 use App\Http\Controllers\ModuleController;
@@ -12,27 +13,19 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::middleware('auth')->group(function () {
-    Route::get('/dashboard', function () {
-        return view('dashboard.dashboard');
-    });
     Route::get('/course/{title}', function () {
         return view('dashboard.course');
     });
-    Route::get('/profile', [HomeController::class,'profile']);
-    Route::get('/guest', function () {
-        return view('dashboard.guest');
-    });
-    Route::get('/logged', function () {
-        return view('dashboard.course');
-    });
-    Route::get('/intro', function () {
-        return view('dashboard.intro');
+    Route::controller(HomeController::class)->group(function () {
+        Route::get('/dashboard','dashboard');
+        Route::get('/profile','profile');
     });
     Route::resources([
         'courses' => CourseController::class,
         'module' => ModuleController::class,
         'lesson' => LessonController::class,
         'user' => UserController::class,
+        'enroll'=>EnrollController::class,
     ]);
 });
 Auth::routes();

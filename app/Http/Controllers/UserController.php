@@ -80,6 +80,9 @@ class UserController extends Controller
         if(request()->biography!=null){
             $user->biography=request()->biography;
         }
+        if(request()->role!=null){
+            $user->role=request()->role;
+        }
         $user->update();
         return redirect()->back()->with('success','Success');
     }

@@ -74,14 +74,20 @@ html {
     font-family: Montserrat;
     font-size: 1.2vw;
 }
-.dropdown-toggle{
-    border:2px solid #141430;
+
+.dropdown-toggle {
+    border: 2px solid #141430;
     width: 100%;
 }
+
+/* .sidebar{
+    width:15vw;
+} */
 @media (max-width:760px) {
-    #btn{
+    #btn {
         display: none;
     }
+
     .school h1 {
         font-size: 4.8vw;
     }
@@ -89,6 +95,7 @@ html {
     .school p {
         font-size: 3vw;
     }
+
     .about {
         width: 80%;
         left: 10%;
@@ -101,10 +108,54 @@ html {
     .about p {
         font-size: 2.2vw;
     }
+
+    .sidebar {
+        width: 100%;
+    }
+
+    .sidebar li {
+        float: left;
+        margin-right: 5vw;
+    }
+
+    .sidebar li a {
+        display: block;
+        text-decoration: none;
+        overflow: hidden;
+        text-wrap: nowrap;
+        color: #141430;
+    }
+    .dlogo {
+        display: none;
+    }
+
 }
-.cover{
+
+@media (min-width:760px) {
+    #profile {
+        display: flex;
+    }
+
+    .sidebar {
+        width: 20%;
+    }
+
+    .sidebar li a {
+        text-decoration: none;
+        overflow: hidden;
+        text-wrap: nowrap;
+        color: #141430;
+    }
+    .main{
+        margin-top: 100px;
+        width:70%;
+    }
+}
+
+.cover {
     position: relative;
 }
+
 .camera {
     z-index: 1;
     top: 10px;
@@ -112,6 +163,7 @@ html {
     position: absolute;
     font-size: xx-large;
 }
+
 .cam {
     z-index: 1;
     top: 5px;
@@ -133,9 +185,11 @@ html {
     font-weight: bold;
     font-family: Montserrat;
 }
-#resources p{
+
+#resources p {
     font-size: 3vw;
 }
+
 .programs i {
     font-size: 4vw;
 }
@@ -158,10 +212,12 @@ html {
     font-family: Montserrat;
     font-weight: bolder;
     text-align: center;
+    font-size: 4vw;
 }
 
 #about_program h2 {
     font-family: Montserrat;
+    font-size: 3vw;
     font-weight: bold;
 }
 
@@ -169,7 +225,8 @@ html {
     font-family: Montserrat;
     color: black;
     margin-top: 2vh;
-    font-weight: bold;
+    font-size: 2vw;
+    font-weight: bolder;
 }
 
 #message {
@@ -193,7 +250,7 @@ html {
 
 .mbutton {
     border-radius: 15px;
-    font-size: 4vh;
+    font-size: 3vw;
     font-weight: bold;
     font-family: Montserrat;
     background-color: #141430;
@@ -235,7 +292,7 @@ html {
 }
 
 #connect input {
-    border:2px solid #141430;
+    border: 2px solid #141430;
 }
 
 #connect p {
@@ -333,4 +390,3 @@ footer {
     padding-top: 3vh;
     padding-bottom: 3vh;
 }
-

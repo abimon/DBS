@@ -198,7 +198,7 @@
                     <h5 class="prim fw-bold">
                         General Information
                     </h5>
-                    <button class="rounded-pill button ps-4 pe-4 bg-secondary" data-bs-toggle="modal" data-bs-target="#EditProfile" type='button'>Edit</button>
+                    <button class="rounded-pill button bg-prim ps-4 pe-4" data-bs-toggle="modal" data-bs-target="#EditProfile" type='button'>Edit</button>
 
                     <div class="modal fade" id="EditProfile" tabindex="-1" aria-labelledby="EditProfileLabel" aria-hidden="true">
                         <div class="modal-dialog">
