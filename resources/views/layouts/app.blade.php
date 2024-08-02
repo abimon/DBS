@@ -50,22 +50,28 @@
                         <li class="nav-item ms-5">
                             <a class="nav-link text-dark fw-bold" href="/dashboard">Study Room</a>
                         </li>
-                        
+
                     </ul>
                 </div>
             </div>
         </nav>
 
         <main class="bg-transparent">
+            @if (Session::has('message'))
+            <div class="alert alert-info alert-dismissible fade show" role="alert">
+                {{ Session::get('message') }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+            @endif
             @yield('content')
             <div class="bottom p-start">
                 <div class="row p-3 d-flex justify-content-between" id="connect">
                     <div class="col-md-4  text-start p-2">
                         <h3 class="title">Stay Connected</h3>
                         <p>Be the first to know about news, events and more here at DBS</p>
-                        <form action="" method="post">
+                        <form action="{{route('subscribe.store')}}" method="post">
                             @csrf
-                            <input type="email" name="email" placeholder="ENTER EMAIL ADDRESS" class="form-control">
+                            <input type="email" name="email" placeholder="Enter email adress and then press ENTER/OK" class="form-control">
                         </form>
                     </div>
                     <div class="col-md-1"></div>
@@ -76,13 +82,16 @@
                         <p>Sermons</p>
                         <p>Devotionals</p>
                     </div>
-                    <div class="col-md-2 text-start p-2">
+                    <!-- <div class="col-md-2 text-start p-2">
                         <h3 class="title">Connect</h3>
-                        <p style="font-size: xx-large; text-align:center"><i class="bi bi-facebook"></i> <i class="bi bi-twitter-x"></i></p>
-                    </div>
+                        
+                    </div> -->
                     <div class="col-md-1"></div>
                     <div class="mt-1 mail">
-                        <i class="bi bi-envelope"></i> info@thehearted.org
+                        <div class="d-flex justify-content-center">
+                            <div class="me-5"><i class="bi bi-envelope"></i> info@thehearted.org</div>
+                            <div class="ms-5"><i class="bi bi-facebook"></i> <i class="bi bi-twitter-x"></i></div>
+                        </div>
                     </div>
                 </div>
             </div>

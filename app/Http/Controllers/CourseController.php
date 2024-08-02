@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Course;
+use App\Models\Enroll;
 use App\Models\Module;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 class CourseController extends Controller
 {
@@ -26,26 +28,26 @@ class CourseController extends Controller
         $course=Course::create([
             'author'=>Auth()->user()->id,
             'title'=>request()->title,
+            'slug'=>strtolower(Str::slug(request('title'))),
             'category'=>request()->category,
-            'description'=>request()->description,
         ]);
         $id = $course->id;
         return view('Lessons.course2',compact('id'));
         
     }
-    public function show(Course $course)
+    public function show($slug)
     {
-        //
+        $course = Course::where('slug',$slug)->first();
+        return view('Courses.course',compact('course'));
     }
-    public function edit(Course $course)
+    public function edit($id)
     {
-        
+        $course = Course::findOrFail($id);
+        return view('Courses.edit',compact('course'));
     }
 
     public function update($id)
     {
-        // dd(request());
-        
         $course = Course::findOrFail($id);
         if($course->cover_path == null){
             if(request()->hasFile('cover')){

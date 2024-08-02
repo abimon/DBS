@@ -10,8 +10,8 @@ class Module extends Model
     use HasFactory;
     protected $fillable = [
         'course_id',
+        'index_no',
         'title',
-        'description',
     ];
     public function lessons(){
         return $this->hasMany(Lesson::class,'module_id','id');

@@ -25,7 +25,6 @@
                                     <label for="">Module title</label>
                                     <input type="text" class="form-control" name="title">
                                 </div>
-                                <textarea name="description" id="editor{{1}}"></textarea>
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -117,12 +116,14 @@
         <button type="submit" class="btn bg-prim text-white">Save and Upload</button>
     </div>
 </div>
+
 <script src="https://cdn.ckeditor.com/ckeditor5/36.0.0/super-build/ckeditor.js"></script>
 <script>
     var i = 4;
     for (j = 0; j < i; j++) {
         CKEDITOR.ClassicEditor
             .create(document.getElementById("editor" + j), {
+
                 list: {
                     properties: {
                         styles: true,

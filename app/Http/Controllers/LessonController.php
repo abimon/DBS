@@ -20,10 +20,18 @@ class LessonController extends Controller
     {
         //
     }
-    public function store(Request $request)
+    public function store()
     {
+        $module = Lesson::where('module_id', request('courseId'))->orderBy('created_at', 'desc')->first();
+        if (!$module) {
+            $index = 1;
+        }
+        else{
+            $index = $module->index_no + 1;
+        }
         Lesson::create([
             'module_id'=>request()->courseId,
+            'index_no'=>$index,
             'title'=>request()->title,
             'body'=>request()->body
         ]);

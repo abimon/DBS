@@ -14,7 +14,7 @@ class ModuleController extends Controller
     public function index()
     {
         $course = Course::findOrFail(request()->course);
-        return view('Lessons.course3',compact('course'));
+        return view('Lessons.course3', compact('course'));
     }
     public function create()
     {
@@ -22,14 +22,22 @@ class ModuleController extends Controller
     }
     public function store(Request $request)
     {
+        $module = Module::where('course_id', request('courseId'))->orderBy('created_at', 'desc')->first();
+        if (!$module) {
+            $index = 1;
+        }
+        else{
+            $index = $module->index_no + 1;
+        }
         Module::create([
-            'course_id'=>request()->courseId,
-            'title'=>request()->title,
-            'description'=>request()->description,
+            'course_id' => request()->courseId,
+            'index_no' => $index,
+            'title' => request()->title,
         ]);
-        return redirect()->back()->with('success','Success');
-    }
 
+        return redirect()->back()->with('success', 'Success');
+    }
+    
     public function show(Module $module)
     {
         //

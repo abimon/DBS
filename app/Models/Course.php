@@ -11,8 +11,8 @@ class Course extends Model
     protected $fillable = [
         'author',
         'title',
+        'slug',
         'category',
-        'description',
         'cover_path',
     ];
     function publisher(){

@@ -41,7 +41,7 @@
                 <div class="program"><i class="bi bi-recycle"></i> Been there, done that</div>
                 <div class="program"><i class="bi bi-heart-pulse"></i> Habits of a healthy heart</div>
                 <div class="program"><i class="bi bi-bookmarks"></i> The book of Ruth</div>
-                <div class="text-center program"><button class="mbutton ps-4 pe-4">See all topics</button></div>
+                <a class="text-center program" href="{{route('courses.index')}}"><button class="mbutton ps-4 pe-4">See all topics</button></a>
             </div>
         </div>
 
@@ -65,27 +65,97 @@
             </div>
         </div>
         <div class="text-center offset-4">
-            <button class="mbutton ps-4 pe-4">Get Involved</button>
+            <!-- Button trigger modal -->
+            <button class="mbutton ps-4 pe-4" data-bs-toggle="modal" data-bs-target="#exampleModal">Get Involved</button>
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="exampleModalLabel">Get Involved</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <form action="{{route('support.store')}}" method="post">
+                            @csrf
+                            <div class="modal-body">
+                                <div class="form-floating mb-3">
+                                    <input type="text" name="name" value="{{old('name')}}" id="" class="form-control" placeholder=" " required>
+                                    <label for="">Full Name*</label>
+                                </div>
+                                <div class="form-floating mb-3">
+                                    <input type="email" name="email" value="{{old('email')}}" id="" class="form-control" placeholder=" ">
+                                    <label for="">Email</label>
+                                </div>
+                                <p class="text-center mb-3">OR</p>
+                                <div class="form-floating mb-3">
+                                    <input type="text" name="phone" value="{{old('phone')}}" id="" class="form-control" placeholder=" ">
+                                    <label for="">Phone Number</label>
+                                </div>
+                                <div class="form-floating mb-3">
+                                    <select name="mode" id="" class="form-select">
+                                        <option value="Finance">Finance</option>
+                                        <option value="Manpower">Manpower</option>
+                                        <option value="Other">Other</option>
+                                    </select>
+                                    <label for="">How would you like to get involved?</label>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn button bg-danger" data-bs-dismiss="modal">Close</button>
+                                <button type="submit" class="btn button">Submit</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            @if (Session::has('success'))
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                {{ Session::get('success') }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+            @endif
+            @if (Session::has('error'))
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                {{ Session::get('error') }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+            @endif
         </div>
     </div>
     <div id="message">
-        <h1>Message Series</h1>
-        <div class="row d-flex justify-content-between">
-            <?php $lessons = ['image1', 'image2', 'image3', '']; ?>
-            @foreach($lessons as $lesson)
+        <h1>Latest Series</h1>
+        <div class="row d-flex justify-content-start">
+            @foreach($courses as $course)
             <div class="col-lg-3 col-md-4 col-6 p-2">
                 <div class="position-relative bg-light overflow-hidden">
-                    <img class="img-fluid" src="{{asset('storage/images/'.$lesson.'.png')}}" style='height:30vh;width:100%;object-fit:cover;' alt="">
+                    <img class="img-fluid" src="{{asset('storage/covers/'.$course->cover_path)}}" style='height:30vh;width:100%;object-fit:cover;' alt="">
                 </div>
                 <div class="border-top">
-                    <a href="">Address title will go here</a>
-                    <p>Short statement here...</p>
+                    <a href="">{{$course->title}}</a>
+                    <p><?php echo mb_substr(html_entity_decode($course->description), 0, 40); ?>...</p>
+                </div>
+                <a href="#" data-bs-toggle="modal" data-bs-target="#{{$course->slug}}">Details...</a>
+            </div>
+            <div class="modal fade" id="{{$course->slug}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="exampleModalLabel">{{$course->title}}</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                            <div class="modal-body">
+                            <?php echo html_entity_decode($course->description); ?>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn button bg-danger" data-bs-dismiss="modal">Close</button>
+                            </div>
+                    </div>
                 </div>
             </div>
             @endforeach
         </div>
         <div class="text-center">
-            <button class="mbutton ps-4 pe-4">See more</button>
+            <a href="{{route('courses.index')}}"><button class="mbutton ps-4 pe-4">See more</button></a>
         </div>
     </div>
     <?php $img = asset("storage/images/help.png"); ?>

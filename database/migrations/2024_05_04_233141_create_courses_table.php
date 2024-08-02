@@ -15,8 +15,8 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('author');
             $table->string('title');
+            $table->string('slug');
             $table->string('category');
-            $table->longText('description')->nullable();
             $table->string('cover_path')->nullable();
             $table->string('url')->nullable();
             $table->timestamps();

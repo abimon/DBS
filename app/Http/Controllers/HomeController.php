@@ -8,6 +8,10 @@ use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
+    public function index(){
+        $courses = Course::latest()->take(4)->get();
+        return view('welcome',compact('courses'));
+    }
     public function profile(){
         $score = 0;
         $g=0;

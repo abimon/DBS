@@ -150,6 +150,9 @@ html {
         margin-top: 100px;
         width:70%;
     }
+    .mbutton{
+        font-size: 3vw;
+    }
 }
 
 .cover {
@@ -250,7 +253,7 @@ html {
 
 .mbutton {
     border-radius: 15px;
-    font-size: 3vw;
+    font-size: 2vw;
     font-weight: bold;
     font-family: Montserrat;
     background-color: #141430;
