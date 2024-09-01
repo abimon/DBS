@@ -51,7 +51,7 @@
                             <a class="nav-link text-dark fw-bold" href="/dashboard">Study Room</a>
                         </li>
                         <li class="nav-item ms-5">
-                            <a class="nav-link text-dark fw-bold" href="/login"><button class="btn bg-prim text-light"></button></a>
+                            <a class="nav-link text-dark fw-bold" href="/login"><button class="btn bg-prim text-light">Login</button></a>
                         </li>
 
                     </ul>
