@@ -50,6 +50,9 @@
                         <li class="nav-item ms-5">
                             <a class="nav-link text-dark fw-bold" href="/dashboard">Study Room</a>
                         </li>
+                        <li class="nav-item ms-5">
+                            <a class="nav-link text-dark fw-bold" href="/dashboard"><button class="btn bg-prim text-light"></button></a>
+                        </li>
 
                     </ul>
                 </div>
