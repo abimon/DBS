@@ -1,2 +1,4 @@
 .env
 /public/storage
+/storage/app/public/covers
+/storage/app/public/profile

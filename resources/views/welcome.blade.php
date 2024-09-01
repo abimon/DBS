@@ -6,7 +6,7 @@
         <div class="school">
             <h1 class="ms-5 fw-bold">The Digital Bible School</h1>
             <p class="ms-5">Truth that changes lives</p>
-            <a href="{{route('register')}}" style="text-align:left;" class="ms-5"><button id="btn" class="button">Join Us</button></a>
+            <a href="{{route('login')}}" style="text-align:left;" class="ms-5"><button id="btn" class="button">Join Us</button></a>
         </div>
     </div>
     <div class="programs">
